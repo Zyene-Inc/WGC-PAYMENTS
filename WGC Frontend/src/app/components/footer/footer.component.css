@@ -1,0 +1,16 @@
+.wgc-dark-footer {
+  background-color: #020617 !important;
+  color: white !important;
+}
+
+.wgc-dark-footer a {
+  color: #94a3b8 !important; /* Slate-400 */
+}
+
+.wgc-dark-footer a:hover {
+  color: #eab308 !important; /* Gold */
+}
+
+.wgc-dark-footer h3 {
+  color: #eab308 !important; /* Gold headings */
+}

@@ -1,0 +1,51 @@
+:root {
+  /* Primary Navy */
+  --wgc-navy-50:  #f1f5f9;
+  --wgc-navy-100: #cbd5e1;
+  --wgc-navy-200: #94a3b8;
+  --wgc-navy-300: #94a3b8;
+  --wgc-navy-400: #64748b;
+  --wgc-navy-500: #0f172a;
+  --wgc-navy-600: #020617;
+  --wgc-navy-700: #0f172a;
+  --wgc-navy-800: #0c1322;
+  --wgc-navy-900: #020617;
+  --wgc-navy-950: #010409;
+
+  /* Standard Gold */
+  --wgc-gold-300: #fde047;
+  --wgc-gold-500: #eab308;
+  --wgc-gold-600: #ca8a04;
+
+  /* Premium Emerald / Growth (LEGACY - REDIRECTED TO GOLD/NAVY) */
+  --wgc-emerald-50:  var(--wgc-navy-50);
+  --wgc-emerald-100: var(--wgc-navy-100);
+  --wgc-emerald-200: var(--wgc-navy-200);
+  --wgc-emerald-400: var(--wgc-gold-300);
+  --wgc-emerald-500: var(--wgc-gold-500);
+  --wgc-emerald-600: var(--wgc-gold-600);
+  --wgc-emerald-700: var(--wgc-navy-600);
+
+  /* Neutrals */
+  --wgc-white:    #ffffff;
+  --wgc-off:      #fdfdfd;
+  --wgc-gray-50:  #f9fafb;
+  --wgc-gray-100: #f3f4f6;
+  --wgc-gray-200: #e5e7eb;
+
+  /* Success/Warning/Error (ALIGNED TO INSTITUTIONAL PALETTE) */
+  --wgc-success: var(--wgc-gold-500);
+  --wgc-warning: #f59e0b;
+  --wgc-error:   #ef4444;
+
+  /* Premium Gradients */
+  --wgc-grad-gold: linear-gradient(135deg, #ca8a04 0%, #eab308 100%);
+  --wgc-grad-emerald: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  --wgc-grad-navy: linear-gradient(135deg, #0f172a 0%, #010409 100%);
+  --wgc-grad-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+  /* Premium Shadows */
+  --wgc-glow-gold: 0 0 20px rgba(234, 179, 8, 0.3);
+  --wgc-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.2);
+  --wgc-shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}

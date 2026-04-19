@@ -1,0 +1,90 @@
+### WGC Backend API Examples
+
+@baseUrl = http://localhost:3000/api
+@partnerApiKey = sample-partner-key-123
+
+### 1. Register User (Partner Admin)
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "admin@partner.com",
+  "password": "securepassword123",
+  "role": "partner_admin"
+}
+
+### 2. Login
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@partner.com",
+  "password": "securepassword123"
+}
+
+### 3. Onboarding: Create Merchant (Requires Auth)
+@token = {{login.response.body.token}}
+POST {{baseUrl}}/onboarding/merchant
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "First Baptist Church",
+  "email": "finance@fbc.org",
+  "partnerId": "uuid-of-partner"
+}
+
+### 4. Payments: Process Donation (Via Partner API Key)
+POST {{baseUrl}}/payments/donate
+x-api-key: {{partnerApiKey}}
+Content-Type: application/json
+
+{
+  "amount": 100.00,
+  "merchantId": "uuid-of-merchant",
+  "donorName": "John Doe",
+  "donorEmail": "john@example.com"
+}
+
+### 5. Dashboard Summary (Requires Partner Admin Auth)
+GET {{baseUrl}}/dashboard/summary
+Authorization: Bearer {{token}}
+
+### 6. Migration: Import Donors
+POST {{baseUrl}}/migration/import
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "merchantId": "uuid-of-merchant",
+  "donors": [
+    { "email": "donor1@test.com", "name": "Donor One" },
+    { "email": "donor2@test.com", "name": "Donor Two" }
+  ]
+}
+
+### 7. Contact Form
+POST {{baseUrl}}/contact
+Content-Type: application/json
+
+{
+  "name": "Potential Partner",
+  "email": "growth@softwareco.com",
+  "message": "We would like to integrate WGC into our platform."
+}
+
+### 8. Webhook: Simulate Finix Event
+POST {{baseUrl}}/webhooks/finix
+Content-Type: application/json
+
+{
+  "type": "payment.succeeded",
+  "data": {
+    "id": "pay_mock123",
+    "amount": 5000,
+    "tags": {
+      "internal_payment_id": "uuid-of-internal-payment"
+    }
+  }
+}

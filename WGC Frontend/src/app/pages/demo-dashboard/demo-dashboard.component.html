@@ -1,0 +1,155 @@
+<div class="bg-wgc-gray-50 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    
+    <!-- Top Note -->
+    <div class="mb-8 text-center sm:text-left">
+      <h1 class="text-3xl font-display font-bold text-wgc-gray-900 tracking-tight">What your church users will see</h1>
+      <p class="mt-2 text-lg text-wgc-gray-600">A clean, focused dashboard powered by WGC infrastructure, styled to match your software.</p>
+    </div>
+
+    <!-- The Mock Dashboard Surface -->
+    <div class="bg-wgc-white rounded-xl shadow-lg border border-wgc-gray-200 overflow-hidden">
+      
+      <!-- Fake Nav Bar within the mock -->
+      <div class="border-b border-wgc-gray-200 bg-wgc-gray-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded bg-wgc-blue-600 flex items-center justify-center text-wgc-navy-900 font-bold">C</div>
+          <span class="font-semibold text-wgc-gray-800">ChurchSoft Admin</span>
+        </div>
+        <div class="text-sm font-medium text-wgc-gray-500 opacity-70">Read-only preview</div>
+        <div class="w-8 h-8 rounded-full bg-wgc-gray-200 flex items-center justify-center overflow-hidden">
+          <lucide-icon [img]="Users" class="w-4 h-4 text-wgc-gray-500"></lucide-icon>
+        </div>
+      </div>
+
+      <div class="p-6 md:p-8 bg-wgc-gray-50/30 relative min-h-[400px]">
+        
+        <!-- Loading State -->
+        <div *ngIf="isLoading()" class="absolute inset-0 bg-wgc-white/60 backdrop-blur-[2px] z-10 flex items-center justify-center">
+          <div class="text-center">
+            <lucide-icon [img]="LoaderIcon" class="w-10 h-10 text-wgc-blue-600 animate-spin mx-auto mb-2"></lucide-icon>
+            <p class="text-sm font-medium text-wgc-gray-600">Loading live data...</p>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div *ngIf="errorMessage()" class="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex gap-3 text-red-800">
+           <p class="text-sm">{{ errorMessage() }}</p>
+           <button (click)="loadStats()" class="text-sm font-bold underline">Retry</button>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div class="bg-wgc-white p-5 rounded-lg border border-wgc-gray-200 shadow-sm">
+            <div class="flex items-center text-wgc-gray-500 mb-2">
+              <lucide-icon [img]="DollarSign" class="w-4 h-4 mr-2"></lucide-icon>
+              <span class="text-sm font-medium">Total Giving</span>
+            </div>
+            <div class="text-2xl font-bold text-wgc-gray-900">{{ (stats()?.totalVolume || 0) / 100 | currency }}</div>
+          </div>
+          <div class="bg-wgc-white p-5 rounded-lg border border-wgc-gray-200 shadow-sm">
+            <div class="flex items-center text-wgc-gray-500 mb-2">
+              <lucide-icon [img]="Users" class="w-4 h-4 mr-2"></lucide-icon>
+              <span class="text-sm font-medium">Total Donors</span>
+            </div>
+            <div class="text-2xl font-bold text-wgc-gray-900">{{ stats()?.donationCount || 0 }}</div>
+          </div>
+          <div class="bg-wgc-white p-5 rounded-lg border border-wgc-gray-200 shadow-sm">
+            <div class="flex items-center text-wgc-gray-500 mb-2">
+              <lucide-icon [img]="PiggyBank" class="w-4 h-4 mr-2"></lucide-icon>
+              <span class="text-sm font-medium">Avg Donation</span>
+            </div>
+            <div class="text-2xl font-bold text-wgc-gray-900">{{ (stats()?.averageDonation || 0) / 100 | currency }}</div>
+          </div>
+          <div class="bg-wgc-white p-5 rounded-lg border border-wgc-gray-200 shadow-sm">
+            <div class="flex items-center text-wgc-gray-500 mb-2">
+              <lucide-icon [img]="Briefcase" class="w-4 h-4 mr-2"></lucide-icon>
+              <span class="text-sm font-medium">Active Funds</span>
+            </div>
+            <div class="text-2xl font-bold text-wgc-gray-900">{{ stats()?.volumeByFund?.length || 0 }}</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Recent Donations Table -->
+          <div class="lg:col-span-2 bg-wgc-white rounded-lg border border-wgc-gray-200 shadow-sm overflow-hidden">
+            <div class="px-6 py-4 border-b border-wgc-gray-200 flex justify-between items-center">
+              <h3 class="font-semibold text-wgc-gray-900">Recent Donations</h3>
+              <a href="#" class="text-sm text-wgc-blue-600 font-medium">View all</a>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-wgc-gray-200">
+                <thead class="bg-wgc-gray-50">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-wgc-gray-500 uppercase tracking-wider">Date</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-wgc-gray-500 uppercase tracking-wider">Donor</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-wgc-gray-500 uppercase tracking-wider">Fund</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-wgc-gray-500 uppercase tracking-wider">Amount</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-wgc-gray-500 uppercase tracking-wider">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-wgc-white divide-y divide-wgc-gray-200">
+                  <tr *ngFor="let tx of stats()?.recentDonations">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-wgc-gray-500">{{ tx.date | date:'short' }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-wgc-gray-900">{{ tx.donor }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-wgc-gray-500">{{ tx.fund }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-wgc-gray-900 font-medium">{{ tx.amount / 100 | currency }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span class="px-2.5 py-0.5 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                        Succeeded
+                      </span>
+                    </td>
+                  </tr>
+                  <tr *ngIf="!isLoading() && (!stats()?.recentDonations || stats()?.recentDonations?.length === 0)">
+                    <td colspan="5" class="px-6 py-10 text-center text-wgc-gray-500 italic">No recent donations to display.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Sandbox Area -->
+          <div class="space-y-6">
+            <!-- Payout Card -->
+            <div class="bg-wgc-white p-6 rounded-lg border border-wgc-gray-200 shadow-sm">
+              <h3 class="font-semibold text-wgc-gray-900 mb-4">Live Activity</h3>
+              <div class="space-y-4">
+                 <div *ngFor="let fund of stats()?.volumeByFund" class="flex items-center justify-between">
+                    <div class="text-sm text-wgc-gray-600">{{ fund.name }}</div>
+                    <div class="text-sm font-bold text-wgc-gray-900">{{ fund.amount / 100 | currency }}</div>
+                 </div>
+              </div>
+            </div>
+
+            <!-- Chart Placeholder -->
+            <div class="bg-wgc-white p-6 rounded-lg border border-wgc-gray-200 shadow-sm h-48 flex flex-col justify-end relative">
+              <h3 class="absolute top-6 left-6 font-semibold text-wgc-gray-900 text-sm">Giving Activity</h3>
+              <div class="flex items-end space-x-2 h-24 mt-8">
+                <div class="flex-1 bg-wgc-blue-100 rounded-t h-1/3"></div>
+                <div class="flex-1 bg-wgc-blue-200 rounded-t h-1/2"></div>
+                <div class="flex-1 bg-wgc-blue-300 rounded-t h-full"></div>
+                <div class="flex-1 bg-wgc-blue-400 rounded-t h-2/3"></div>
+                <div class="flex-1 bg-wgc-blue-500 rounded-t h-5/6"></div>
+                <div class="flex-1 bg-wgc-blue-600 rounded-t h-1/2"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Below the mocked dashboard -->
+    <div class="mt-8 text-center text-sm text-wgc-gray-500 bg-wgc-blue-50 border border-wgc-blue-100 p-4 rounded-md">
+      This is a live preview fetching data from the WGC Backend API.
+    </div>
+
+    <div class="mt-12 text-center">
+      <a routerLink="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-wgc-navy-900 bg-wgc-blue-600 hover:bg-wgc-blue-700 shadow-sm">
+        Interested in building this with WGC? <lucide-icon [img]="ArrowRight" class="ml-2 w-4 h-4"></lucide-icon>
+      </a>
+    </div>
+
+  </div>
+</div>

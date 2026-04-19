@@ -1,0 +1,258 @@
+<!-- ==================== DARK HERO ==================== -->
+<section class="relative bg-wgc-navy-900 pt-32 pb-24 overflow-hidden border-b border-wgc-navy-800">
+  <div class="absolute inset-0 opacity-[0.04]">
+    <svg class="w-full h-full" fill="none">
+      <pattern id="partners-hero-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+        <path d="M 28 0 L 0 0 0 28" fill="none" stroke="white" stroke-width="0.5"/>
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#partners-hero-grid)"/>
+    </svg>
+  </div>
+  <div class="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-10 pointer-events-none" style="background: radial-gradient(circle, #eab308 0%, transparent 70%);"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 border" style="background: rgba(234,179,8,0.1); border-color: rgba(234,179,8,0.3);">
+          <div class="w-1.5 h-1.5 rounded-full bg-wgc-gold-500"></div>
+          <span class="text-[10px] font-black uppercase tracking-[0.3em]" style="color: rgba(234,179,8,0.9);">Software Partnership</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl font-black tracking-tight leading-[1.05] mb-6" style="color: #f8fafc;">
+          Embedded payments for <br><span style="color: #eab308;">Ministry SaaS.</span>
+        </h1>
+        <p class="text-xl font-medium leading-relaxed mb-10" style="color: #94a3b8;">
+          Integrate donations, recurring giving, ACH payments, and payouts directly into your platform — fully white-labeled.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a routerLink="/contact" class="metallic-gold inline-flex items-center justify-center px-8 py-4 text-sm font-black rounded-full shadow-xl transform transition-all hover:scale-105 uppercase tracking-wider text-wgc-navy-900">
+            Apply for Partnership
+          </a>
+          <a routerLink="/developers" class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold rounded-full transition-all uppercase tracking-wider border" style="color: #94a3b8; border-color: rgba(148,163,184,0.3);">
+            Review API Docs
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Side Visual Card -->
+      <div class="mt-16 lg:mt-0">
+        <div class="relative rounded-3xl p-10 overflow-hidden shadow-2xl" 
+             style="background: linear-gradient(145deg, #020617 0%, #0f172a 60%, #1a2540 100%); border: 1px solid rgba(234,179,8,0.2);">
+          <div class="absolute -bottom-6 -right-6 opacity-[0.05] pointer-events-none select-none" style="font-size: 14rem; color: #eab308; font-weight: 900; line-height: 1;">✝</div>
+          
+          <div class="relative z-10 flex items-center gap-3 mb-8">
+            <div class="w-10 h-1 rounded-full" style="background: linear-gradient(90deg, #eab308, #ca8a04);"></div>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em]" style="color: rgba(234,179,8,0.7);">Our Core Mandate</span>
+          </div>
+
+          <blockquote class="relative z-10 mb-8">
+            <p class="text-2xl font-bold leading-snug italic mb-5" style="color: #f8fafc;">
+              "Go and make disciples of all nations."
+            </p>
+            <footer class="flex items-center gap-3">
+              <div class="w-6 h-px" style="background: rgba(234,179,8,0.5);"></div>
+              <span class="font-black text-[11px] uppercase tracking-widest" style="color: #eab308;">Matthew 28:19</span>
+            </footer>
+          </blockquote>
+
+          <div class="relative z-10 border-t my-6" style="border-color: rgba(234,179,8,0.1);"></div>
+
+          <div class="relative z-10 space-y-4 mb-8">
+            @for (item of ['White-labeled donations in days', 'Flat-rate ACH at 25¢', 'Automated recurring engine', 'PCI Level 1 Compliance']; track item) {
+              <div class="flex items-center gap-4">
+                <div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(234,179,8,0.15); border: 1px solid rgba(234,179,8,0.3);">
+                  <div class="w-2 h-2 rounded-full bg-wgc-gold-500"></div>
+                </div>
+                <span class="text-sm font-semibold" style="color: #94a3b8;">{{ item }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROOF BAND ==================== -->
+<div class="bg-wgc-navy-900 border-b border-wgc-navy-800 py-8 text-center px-4 overflow-hidden relative">
+  <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-12 text-wgc-white font-bold uppercase tracking-widest text-[11px] mb-2">
+    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-wgc-gold-500"></div> Built for Church CRMs</div>
+    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-wgc-gold-500"></div> Recurring Giving Engine</div>
+    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-wgc-gold-500"></div> ACH + Card Payments</div>
+    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-wgc-gold-500"></div> White-label Experience</div>
+  </div>
+</div>
+
+<!-- ==================== PLATFORMS ==================== -->
+<section class="py-24 bg-wgc-off border-b border-wgc-navy-100/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" appScrollFade>
+      <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-wgc-navy-50 text-wgc-navy-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-6 border border-wgc-navy-100">Partnership focus</div>
+      <h2 class="text-4xl font-black text-wgc-navy-900 tracking-tight">Built for the platforms you trust</h2>
+      <p class="text-lg text-wgc-navy-500 font-medium max-w-2xl mx-auto mt-4">Providing institutional-grade payment rails beneath the software that ministries use every day.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (platform of ['Church Management (ChMS)', 'Donation Platforms', 'Nonprofit CRMs', 'Faith-based SaaS']; track platform; let i = $index) {
+        <div class="p-8 rounded-2xl bg-wgc-white border border-wgc-navy-100 shadow-sm hover:shadow-md transition-all group hover:-translate-y-1" appScrollFade [delay]="i * 100">
+           <div class="text-lg font-black text-wgc-navy-900 group-hover:text-wgc-gold-600 transition-colors">{{ platform }}</div>
+           <div class="w-8 h-1 bg-wgc-gold-500 mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PARTNER FLOW ==================== -->
+<section class="py-24 bg-wgc-white border-b border-wgc-navy-100/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-black text-wgc-navy-900 sm:text-4xl tracking-tight mb-16">The Partner Flow</h2>
+    
+    <div class="flex flex-col md:flex-row items-center justify-center md:items-stretch gap-6">
+      <div class="w-full md:flex-1 p-10 rounded-3xl border border-wgc-navy-100 bg-wgc-off shadow-sm">
+        <div class="text-[10px] font-black text-wgc-navy-400 uppercase tracking-widest mb-4">Your Application</div>
+        <div class="text-2xl font-black text-wgc-navy-900 tracking-tight">Partner Software</div>
+      </div>
+      
+      <div class="flex items-center justify-center px-4">
+        <lucide-icon [img]="ArrowRight" class="w-8 h-8 text-wgc-gold-500 hidden md:block"></lucide-icon>
+        <lucide-icon [img]="ChevronDown" class="w-8 h-8 text-wgc-gold-500 md:hidden"></lucide-icon>
+      </div>
+      
+      <div class="w-full md:flex-1 p-10 rounded-3xl border border-wgc-gold-200 bg-wgc-navy-900 shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none select-none" style="font-size: 8rem; color: #eab308; font-weight: 900;">✝</div>
+        <div class="relative z-10 text-[10px] font-black text-wgc-gold-500 uppercase tracking-widest mb-4">Infrastructure</div>
+        <div class="relative z-10 text-2xl font-black text-white tracking-tight">WGC Payments API</div>
+      </div>
+      
+      <div class="flex items-center justify-center px-4">
+        <lucide-icon [img]="ArrowRight" class="w-8 h-8 text-wgc-gold-500 hidden md:block"></lucide-icon>
+        <lucide-icon [img]="ChevronDown" class="w-8 h-8 text-wgc-gold-500 md:hidden"></lucide-icon>
+      </div>
+      
+      <div class="w-full md:flex-1 p-10 rounded-3xl border border-wgc-navy-100 bg-wgc-off shadow-sm">
+        <div class="text-[10px] font-black text-wgc-navy-400 uppercase tracking-widest mb-4">Final Recipients</div>
+        <div class="text-2xl font-black text-wgc-navy-900 tracking-tight">Ministry Merchants</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ADVANTAGE ==================== -->
+<section class="py-24 lg:py-32 bg-wgc-off border-t border-wgc-navy-100/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20" appScrollFade>
+      <h2 class="text-4xl font-black text-wgc-navy-900 mb-6 tracking-tight">The Partner Advantage</h2>
+      <p class="mt-4 max-w-2xl text-lg text-wgc-navy-500 font-medium mx-auto">Everything you need to launch a world-class payment platform, without the burden.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      @for (feature of features; track feature.title; let i = $index) {
+        <div class="bg-wgc-white p-10 rounded-3xl border border-wgc-navy-100 shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1" appScrollFade [delay]="i * 80">
+          <div class="w-12 h-12 bg-wgc-navy-50 rounded-2xl flex items-center justify-center text-wgc-gold-500 mb-8 border border-wgc-navy-100">
+            <lucide-icon [img]="feature.icon" class="w-6 h-6"></lucide-icon>
+          </div>
+          <h3 class="text-xl font-black text-wgc-navy-900 mb-4 tracking-tight">{{ feature.title }}</h3>
+          <p class="text-wgc-navy-500 font-medium leading-relaxed">{{ feature.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUOTE ==================== -->
+<section class="py-24 bg-wgc-white border-y border-wgc-navy-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" appScrollFade>
+    <div class="w-12 h-1.5 metallic-gold mx-auto mb-10 rounded-full"></div>
+    <h2 class="text-4xl font-black text-wgc-navy-900 mb-10 tracking-tight leading-tight">Embedded Payments for Church and Nonprofit Software</h2>
+    <div class="prose prose-lg mx-auto text-wgc-navy-500 space-y-8">
+      <p class="text-2xl italic font-black text-wgc-navy-900 leading-snug">
+        "We exist to make software companies that serve churches more successful. We're not building a direct-to-church product. We're your silent infrastructure."
+      </p>
+      <p class="text-lg font-medium leading-relaxed">
+        WGC is the institutional infrastructure under your software — aligned with your growth and your mission. By using a transferable vault and providing flat-rate ACH, we ensure that your platform scales efficiently while honoring the donors' generosity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DEV PREVIEW ==================== -->
+<section class="py-24 lg:py-32 bg-wgc-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
+      <div appScrollFade>
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-wgc-navy-50 text-wgc-navy-600 text-[10px] font-bold tracking-[0.25em] uppercase mb-8 border border-wgc-navy-100">Developer First</div>
+        <h2 class="text-4xl font-black text-wgc-navy-900 sm:text-5xl mb-8 tracking-tight">Integrate in days, not quarters</h2>
+        <p class="text-lg text-wgc-navy-500 mb-10 leading-relaxed font-medium">
+          WGC provides a strictly typed REST API that your team will love. Process donations, manage merchants, and handle webhooks with a clean, modern SDK.
+        </p>
+        <a routerLink="/developers" class="metallic-gold inline-flex items-center justify-center px-10 py-4 text-sm font-black rounded-full text-wgc-navy-900 shadow-xl transition-all hover:scale-105 uppercase tracking-widest">
+          View API Docs
+        </a>
+      </div>
+      
+      <div class="mt-16 lg:mt-0" appScrollFade [delay]="200">
+        <div class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-wgc-navy-900 border border-wgc-navy-800 shadow-wgc-gold-500/10">
+          <div class="px-8 py-5 flex items-center bg-wgc-white/[0.03] border-b border-white/10">
+            <div class="flex space-x-2">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-wgc-gold-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+            </div>
+            <span class="mx-auto text-[10px] font-black text-wgc-navy-400 uppercase tracking-widest">donation_request.ts</span>
+          </div>
+          <div class="p-10 font-mono text-[13px] leading-relaxed">
+            <pre><code style="color: #94a3b8;"><span style="color: #eab308;">const</span> donation = <span style="color: #eab308;">await</span> wgc.<span style="color: #cbd5e1;">payments</span>.<span style="color: #cbd5e1;">create</span>(&#123;
+  merchantId: <span style="color: #eab308;">'ch_fbc_01'</span>,
+  amount: <span style="color: #f8fafc;">5000</span>,
+  fund: <span style="color: #eab308;">'general'</span>,
+  donor: &#123; email: <span style="color: #eab308;">'user&#64;kingdom.org'</span> &#125;
+&#125;);</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== COMPARISON ==================== -->
+<section class="py-24 bg-wgc-off">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" appScrollFade>
+      <h2 class="text-3xl font-black text-wgc-navy-900 tracking-tight mb-4">Purpose-Built Infrastructure</h2>
+      <p class="text-lg text-wgc-navy-500 font-medium max-w-2xl mx-auto">Why software platforms choose WGC over generic payment rails.</p>
+    </div>
+    
+    <div class="overflow-hidden rounded-3xl bg-wgc-white shadow-xl border border-wgc-navy-100" appScrollFade>
+      <table class="w-full text-left">
+        <thead class="bg-wgc-navy-900 text-white">
+          <tr>
+            <th class="py-6 px-10 text-[10px] font-black uppercase tracking-widest">Platform Feature</th>
+            <th class="py-6 px-10 text-[10px] font-black uppercase tracking-widest text-center text-wgc-gold-500">WGC Payments</th>
+            <th class="py-6 px-10 text-[10px] font-black uppercase tracking-widest text-center opacity-50">Horizontal Rails</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-wgc-navy-50">
+          @for (row of [
+            { f: 'Built for Ministries', w: 'Native alignment', s: 'Broad Retail' },
+            { f: 'ACH Optimization', w: '25¢ Flat-rate', s: 'Margin heavy' },
+            { f: 'Experience', w: 'Fully White-labeled', s: 'Redirected' }
+          ]; track row.f) {
+            <tr>
+              <td class="py-6 px-10 font-black text-wgc-navy-900">{{ row.f }}</td>
+              <td class="py-6 px-10 text-center font-bold text-wgc-navy-700 bg-wgc-gold-500/5">{{ row.w }}</td>
+              <td class="py-6 px-10 text-center text-wgc-navy-400">{{ row.s }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<app-cta-section
+  headline="Ready to power Kingdom giving?"
+  subheadline="Contact our team to review your software roadmap and request sandbox access."
+  ctaText="Contact us"
+  ctaLink="/contact"
+></app-cta-section>

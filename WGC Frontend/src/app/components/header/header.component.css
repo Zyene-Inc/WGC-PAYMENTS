@@ -1,0 +1,42 @@
+.logo-mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.pin-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--wgc-gold-400);
+  z-index: 2;
+}
+
+.arch-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border-top: 2px solid var(--wgc-gold-500);
+  border-left: 2px solid var(--wgc-gold-500);
+  border-right: 2px solid var(--wgc-gold-500);
+  border-radius: 14px 14px 0 0;
+  opacity: 0.6;
+}
+
+.wgc-dark-header {
+  background-color: #020617 !important;
+  color: white !important;
+}
+
+.wgc-dark-header a:not(.metallic-gold) {
+  color: white !important;
+}
+
+.wgc-dark-header a:hover:not(.metallic-gold) {
+  color: #eab308 !important; /* Gold */
+}

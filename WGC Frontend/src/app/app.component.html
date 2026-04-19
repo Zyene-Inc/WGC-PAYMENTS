@@ -1,0 +1,9 @@
+<div class="min-h-screen flex flex-col bg-wgc-off font-sans text-wgc-gray-900 selection:bg-wgc-blue-200 selection:text-wgc-blue-900">
+  <app-header *ngIf="showShell()"></app-header>
+  
+  <main class="flex-grow">
+    <router-outlet></router-outlet>
+  </main>
+  
+  <app-footer *ngIf="showShell()"></app-footer>
+</div>

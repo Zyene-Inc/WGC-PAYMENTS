@@ -1,0 +1,184 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String   @id @default(uuid())
+  email      String   @unique
+  password   String
+  role       String   // partner_admin, church_admin, wgc_admin
+  merchantId String?  // links church_admin to their church
+  createdAt  DateTime @default(now())
+}
+
+model Partner {
+  id         String          @id @default(uuid())
+  name       String
+  apiKey     String          @unique
+  webhookUrl String?
+  merchants  Merchant[]
+  config     PartnerConfig?
+  createdAt  DateTime        @default(now())
+}
+
+model PartnerConfig {
+  id                String  @id @default(uuid())
+  partnerId         String  @unique
+  partner           Partner @relation(fields: [partnerId], references: [id])
+  showFeeBreakdown  Boolean @default(true)
+  showNetOnly       Boolean @default(false)
+  showDonorList     Boolean @default(true)
+  showPayouts       Boolean @default(true)
+  showRecurring     Boolean @default(true)
+  allowRefunds      Boolean @default(false)
+  allowExports      Boolean @default(true)
+}
+
+model Merchant {
+  id               String          @id @default(uuid())
+  name             String
+  email            String          @unique
+  slug             String          @unique @default("")
+  status           String          @default("pending")
+  onboardingStatus String          @default("pending")
+  achEnabled       Boolean         @default(true)
+  recurringEnabled Boolean         @default(true)
+  cardEnabled      Boolean         @default(true)
+  partnerId        String
+  partner          Partner         @relation(fields: [partnerId], references: [id])
+  finixMerchantId  String?
+  donors           Donor[]
+  payments         Payment[]
+  recurring        RecurringDonation[]
+  payouts          Payout[]
+  migrations       MigrationRecord[]
+  campaigns        Campaign[]
+  createdAt        DateTime        @default(now())
+}
+
+model Campaign {
+  id          String    @id @default(uuid())
+  name        String
+  description String?
+  goalAmount  Float?
+  status      String    @default("active") // active, completed, archived
+  merchantId  String
+  merchant    Merchant  @relation(fields: [merchantId], references: [id])
+  payments    Payment[]
+  createdAt   DateTime  @default(now())
+}
+
+model Donor {
+  id          String              @id @default(uuid())
+  name        String
+  email       String
+  merchantId  String
+  merchant    Merchant            @relation(fields: [merchantId], references: [id])
+  payments    Payment[]
+  recurring   RecurringDonation[]
+  createdAt   DateTime            @default(now())
+
+  @@unique([email, merchantId])
+}
+
+model Payment {
+  id              String        @id @default(uuid())
+  amount          Float
+  fee             Float         @default(0)
+  net             Float         @default(0)
+  method          String        @default("CARD")
+  isRecurring     Boolean       @default(false)
+  coverFees       Boolean       @default(false)
+  fund            String        @default("General")
+  status          String        @default("pending")
+  merchantId      String
+  merchant        Merchant      @relation(fields: [merchantId], references: [id])
+  donorId         String
+  donor           Donor         @relation(fields: [donorId], references: [id])
+  campaignId      String?
+  campaign        Campaign?     @relation(fields: [campaignId], references: [id])
+  finixPaymentId  String?
+  createdAt       DateTime      @default(now())
+}
+
+model RecurringDonation {
+  id              String         @id @default(uuid())
+  amount          Float
+  interval        String         @default("monthly")
+  nextBillingDate DateTime?
+  paymentMethodId String         @default("")
+  donorId         String
+  donor           Donor          @relation(fields: [donorId], references: [id])
+  merchantId      String
+  merchant        Merchant       @relation(fields: [merchantId], references: [id])
+  status          String         @default("active")
+  createdAt       DateTime       @default(now())
+}
+
+model Payout {
+  id              String   @id @default(uuid())
+  amount          Float
+  status          String   @default("pending")
+  arrivalDate     DateTime?
+  merchantId      String
+  merchant        Merchant @relation(fields: [merchantId], references: [id])
+  createdAt       DateTime @default(now())
+}
+
+model MigrationRecord {
+  id          String          @id @default(uuid())
+  donorEmail  String
+  status      String          @default("pending")
+  merchantId  String
+  merchant    Merchant        @relation(fields: [merchantId], references: [id])
+  createdAt   DateTime        @default(now())
+}
+
+model WebhookEvent {
+  id          String   @id @default(uuid())
+  eventType   String
+  payload     String
+  processed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model Inquiry {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model MigrationJob {
+  id              String         @id @default(uuid())
+  type            String
+  status          String         @default("pending")
+  fileName        String
+  totalRows       Int            @default(0)
+  validRows       Int            @default(0)
+  errorRows       Int            @default(0)
+  importedRows    Int            @default(0)
+  skippedRows     Int            @default(0)
+  columnMapping   String         @default("{}")
+  errors          String         @default("[]")
+  completedAt     DateTime?
+  rows            MigrationRow[]
+  createdAt       DateTime       @default(now())
+}
+
+model MigrationRow {
+  id              String       @id @default(uuid())
+  jobId           String
+  job             MigrationJob @relation(fields: [jobId], references: [id])
+  rowIndex        Int
+  data            String
+  status          String       @default("pending")
+  validationError String?
+  createdAt       DateTime     @default(now())
+}
