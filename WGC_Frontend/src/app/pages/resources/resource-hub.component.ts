@@ -84,21 +84,21 @@ export class ResourceHubComponent implements OnInit {
 
   resources = [
     {
-      title: 'Church Payment Processing Guide for 2026',
+      title: 'BEST PAYMENT PROCESSOR FOR CHURCHES IN 2026',
       description: 'Learn how church payment processing works, including fees, ACH transfers, recurring giving, branded checkout, reporting, and setup considerations.',
       route: '/resources/church-payment-processing-guide-2026',
       icon: BookOpen,
       readTime: '8 MIN READ'
     },
     {
-      title: 'White-Label Payment Processing for Nonprofit & Church Software',
+      title: 'HOW TO WHITE-LABEL PAYMENTS FOR NONPROFIT SOFTWARE',
       description: 'See how nonprofit and church software platforms can offer embedded, branded payment experiences with onboarding, checkout, recurring donations, payouts, and reporting.',
       route: '/resources/white-label-payment-processing-nonprofit-church-software',
       icon: FileText,
       readTime: '12 MIN READ'
     },
     {
-      title: 'Church Payment Processing Pricing Guide',
+      title: 'STRIPE VS TITHE.LY VS WGC: FEE BREAKDOWN',
       description: 'Understand card fees, ACH support, monthly subscription pricing, recurring donation tools, payout visibility, and what is included in the WGC payments experience.',
       route: '/resources/church-payment-processing-pricing-guide',
       icon: Clock,

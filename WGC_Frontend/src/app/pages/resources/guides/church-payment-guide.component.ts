@@ -34,7 +34,7 @@ import { ResourceCtaComponent } from '../../../components/resources/resource-cta
             Featured Guide
           </div>
           <h1 class="text-4xl md:text-5xl font-black text-wgc-navy-950 tracking-tighter mb-8 tracking-tight uppercase leading-[1.05]">
-            Church Payment Processing <span class="text-wgc-gold-500">Guide for 2026</span>
+            Best Payment Processor <span class="text-wgc-gold-500">For Churches in 2026</span>
           </h1>
           <p class="text-lg md:text-xl text-wgc-navy-600 font-medium leading-relaxed italic border-l-4 border-wgc-gold-500 pl-6 border-opacity-30">
             Churches need more than a way to accept donations online. A modern payment setup should support card payments, ACH transfers, recurring giving, branded donation experiences, payout visibility, and simple reporting.
@@ -170,7 +170,7 @@ export class ChurchPaymentGuideComponent implements OnInit {
   constructor(private title: Title, private meta: Meta) {}
 
   ngOnInit() {
-    this.title.setTitle('Church Payment Processing Guide for 2026 | WGC Payments');
+    this.title.setTitle('Best Payment Processor for Churches in 2026 | WGC Payments');
     this.meta.updateTag({ name: 'description', content: 'Learn how church payment processing works in 2026, including card fees, ACH transfers, recurring giving, branded checkout, reporting, and setup considerations.' });
   }
 }

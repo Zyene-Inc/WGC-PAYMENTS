@@ -34,7 +34,7 @@ import { ResourceCtaComponent } from '../../../components/resources/resource-cta
             Financial Stewardship
           </div>
           <h1 class="text-4xl md:text-5xl font-black text-wgc-navy-950 tracking-tighter mb-8 tracking-tight uppercase leading-[0.95]">
-            Church Payment Processing <span class="text-wgc-gold-500">Pricing Guide</span>
+            Stripe vs Tithe.ly vs <span class="text-wgc-gold-500">WGC: Fee Breakdown</span>
           </h1>
           <p class="text-lg md:text-xl text-wgc-navy-600 font-medium leading-relaxed italic border-l-4 border-wgc-gold-500 pl-6 border-opacity-30">
             A strong payment offering should be transparent, simple to explain, and supported by features like recurring donations, payout visibility, and reporting.
@@ -170,7 +170,7 @@ export class PricingGuideComponent implements OnInit {
   constructor(private title: Title, private meta: Meta) {}
 
   ngOnInit() {
-    this.title.setTitle('Church Payment Processing Pricing Guide | WGC Payments');
+    this.title.setTitle('Stripe vs Tithe.ly vs WGC: Fee Breakdown | Pricing Guide');
     this.meta.updateTag({ name: 'description', content: 'Understand church payment processing pricing, including card transactions, ACH support, monthly subscription costs, recurring donations, and more.' });
   }
 }

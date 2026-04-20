@@ -34,7 +34,7 @@ import { ResourceCtaComponent } from '../../../components/resources/resource-cta
             Software Vertical Guide
           </div>
           <h1 class="text-4xl md:text-5xl font-black text-wgc-navy-950 tracking-tighter mb-8 tracking-tight uppercase leading-[0.95]">
-            White-Label Payment Processing for <span class="text-wgc-gold-500">Software Platforms</span>
+            How to White-Label Payments for <span class="text-wgc-gold-500">Nonprofit Software</span>
           </h1>
           <p class="text-lg md:text-xl text-wgc-navy-600 font-medium leading-relaxed italic border-l-4 border-wgc-gold-500 pl-6 border-opacity-30">
             For nonprofit and church software platforms, payments should feel native to the product. White-label payment processing makes it possible to offer branded onboarding, embedded donation forms, and payout visibility without a disconnected experience.
@@ -176,7 +176,7 @@ export class WhiteLabelGuideComponent implements OnInit {
   constructor(private title: Title, private meta: Meta) {}
 
   ngOnInit() {
-    this.title.setTitle('White-Label Payment Processing for Software Platforms | WGC');
+    this.title.setTitle('How to White-Label Payments for Nonprofit Software | WGC');
     this.meta.updateTag({ name: 'description', content: 'Explore how white-label payment processing helps nonprofit and church software platforms offer branded onboarding, embedded checkout, and payouts.' });
   }
 }
