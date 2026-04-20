@@ -4,10 +4,12 @@ import { RouterLink } from '@angular/router';
 import { LucideAngularModule, ArrowRight, BookOpen, Clock, FileText } from 'lucide-angular';
 import { Title, Meta } from '@angular/platform-browser';
 
+import { ResourceCtaComponent } from '../../../components/resources/resource-cta.component';
+
 @Component({
   selector: 'app-resource-hub',
   standalone: true,
-  imports: [CommonModule, RouterLink, LucideAngularModule],
+  imports: [CommonModule, RouterLink, LucideAngularModule, ResourceCtaComponent],
   template: `
     <div class="min-h-screen bg-wgc-off selection:bg-wgc-gold-100 selection:text-wgc-navy-950">
       <!-- Hub Hero -->
@@ -71,21 +73,8 @@ import { Title, Meta } from '@angular/platform-browser';
         </div>
       </section>
 
-      <!-- Bottom Intent Section -->
-      <section class="pb-24">
-        <div class="max-w-5xl mx-auto px-4">
-          <div class="bg-wgc-navy-950 p-12 rounded-[3.5rem] flex flex-col md:flex-row items-center justify-between gap-10 shadow-premium relative overflow-hidden">
-             <div class="absolute top-0 right-0 w-64 h-64 bg-wgc-gold-500/10 blur-[120px] rounded-full"></div>
-             <div>
-                <h3 class="text-3xl font-black text-white mb-2 tracking-tight uppercase">Ready to scale?</h3>
-                <p class="text-wgc-navy-300 font-medium">Join the hundreds of platforms choosing WGC for institutional excellence.</p>
-             </div>
-             <a routerLink="/register" class="bg-wgc-gold-500 text-wgc-navy-950 px-12 py-5 rounded-2xl text-xs font-black uppercase tracking-[0.2em] shadow-2xl hover:bg-white hover:scale-105 transition-all">
-                Get Started Now
-             </a>
-          </div>
-        </div>
-      </section>
+      <!-- CTA Section -->
+      <app-resource-cta></app-resource-cta>
     </div>
   `
 })

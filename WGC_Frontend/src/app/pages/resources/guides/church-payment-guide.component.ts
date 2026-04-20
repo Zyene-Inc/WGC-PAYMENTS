@@ -124,6 +124,21 @@ import { ResourceCtaComponent } from '../../../components/resources/resource-cta
                <p class="mb-0">The best setup supports donor confidence today and institutional scale tomorrow. WGC is designed to power the branded payment experiences and recurring billing visibility required by modern church software environments.</p>
              </section>
 
+             <!-- Internal Linking -->
+             <section class="pt-16 border-t border-wgc-navy-50">
+                <h4 class="text-[10px] font-black text-wgc-navy-400 uppercase tracking-[0.3em] mb-8">Related Resources</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                   <a routerLink="/resources/white-label-payment-processing-nonprofit-church-software" class="p-6 bg-white border border-wgc-navy-100 rounded-3xl hover:border-wgc-gold-300 transition-all group">
+                      <p class="text-xs font-black text-wgc-navy-950 uppercase tracking-widest mb-2 group-hover:text-wgc-gold-600 transition-colors">White-Label Payment Vertical</p>
+                      <p class="text-[10px] text-wgc-navy-400 leading-relaxed">Explore branded payment architectures for nonprofit software platforms.</p>
+                   </a>
+                   <a routerLink="/resources/church-payment-processing-pricing-guide" class="p-6 bg-white border border-wgc-navy-100 rounded-3xl hover:border-wgc-gold-300 transition-all group">
+                      <p class="text-xs font-black text-wgc-navy-950 uppercase tracking-widest mb-2 group-hover:text-wgc-gold-600 transition-colors">Pricing & Stewardship Guide</p>
+                      <p class="text-[10px] text-wgc-navy-400 leading-relaxed">Understand the WGC pricing structure, card rates, and subscription model.</p>
+                   </a>
+                </div>
+             </section>
+
           </div>
         </div>
       </article>

@@ -117,6 +117,21 @@ import { ResourceCtaComponent } from '../../../components/resources/resource-cta
                </div>
             </section>
 
+            <!-- Internal Linking -->
+            <section class="pt-16 border-t border-wgc-navy-50">
+               <h4 class="text-[10px] font-black text-wgc-navy-400 uppercase tracking-[0.3em] mb-8">Related Resources</h4>
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <a routerLink="/resources/church-payment-processing-guide-2026" class="p-6 bg-wgc-off border border-wgc-navy-100 rounded-3xl hover:border-wgc-gold-300 transition-all group">
+                     <p class="text-xs font-black text-wgc-navy-950 uppercase tracking-widest mb-2 group-hover:text-wgc-gold-600 transition-colors">Core Processing Guide</p>
+                     <p class="text-[10px] text-wgc-navy-400 leading-relaxed">Learn the fundamentals of card processing and ACH for 2026.</p>
+                  </a>
+                  <a routerLink="/resources/church-payment-processing-pricing-guide" class="p-6 bg-wgc-off border border-wgc-navy-100 rounded-3xl hover:border-wgc-gold-300 transition-all group">
+                     <p class="text-xs font-black text-wgc-navy-950 uppercase tracking-widest mb-2 group-hover:text-wgc-gold-600 transition-colors">Pricing & Transparency</p>
+                     <p class="text-[10px] text-wgc-navy-400 leading-relaxed">Full breakdown of the WGC fee structure and subscription model.</p>
+                  </a>
+               </div>
+            </section>
+
           </div>
         </div>
       </article>
