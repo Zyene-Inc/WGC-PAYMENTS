@@ -146,6 +146,14 @@ import { ResourceCtaComponent } from '../../../components/resources/resource-cta
 export class PricingGuideComponent implements OnInit {
   readonly ChevronLeft = ChevronLeft;
   readonly CheckCircle2 = CheckCircle2;
+  readonly BarChart = BarChart;
+  readonly Zap = Zap;
+  readonly RefreshCw = RefreshCw;
+  readonly Landmark = Landmark;
+  readonly Globe = Globe;
+  readonly Users = Users;
+  readonly Settings = Settings;
+  readonly FileText = FileText;
 
   pricingItems = [
     'Dashboard Access',
