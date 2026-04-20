@@ -58,21 +58,22 @@ import { ResourceCtaComponent } from '../../../components/resources/resource-cta
               <div class="bg-wgc-navy-950 rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden shadow-premium mb-12">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-wgc-gold-500/10 blur-[150px] rounded-full"></div>
                 <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                  <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-wgc-gold-500 text-wgc-navy-950 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Institutional Standard</div>
-                    <h3 class="text-3xl font-black mb-6 uppercase tracking-tight leading-tight">Simplified<br>Orchestration</h3>
+                   <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-wgc-gold-500 text-wgc-navy-950 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 shadow-lg shadow-wgc-gold-500/20">Institutional Standard</div>
+                    <h3 class="text-3xl font-black mb-6 uppercase tracking-tight leading-tight text-white italic">Simplified<br>Orchestration</h3>
                     <ul class="space-y-4 list-none p-0">
                       <li *ngFor="let item of pricingItems" class="flex items-center gap-4">
-                        <lucide-icon [img]="CheckCircle2" class="w-5 h-5 text-wgc-gold-500"></lucide-icon>
-                        <span class="text-sm font-bold text-wgc-navy-200 uppercase tracking-widest">{{ item }}</span>
+                        <lucide-icon [img]="CheckCircle2" class="w-5 h-5 text-wgc-gold-500 shadow-sm"></lucide-icon>
+                        <span class="text-sm font-bold text-white uppercase tracking-widest">{{ item }}</span>
                       </li>
                     </ul>
                   </div>
-                  <div class="bg-white/5 border border-white/10 rounded-[2.5rem] p-10 text-center backdrop-blur-sm">
+                  <div class="bg-white/5 border border-white/10 rounded-[2.5rem] p-10 text-center backdrop-blur-sm shadow-inner">
+                    <div class="text-[10px] font-black text-wgc-gold-500 uppercase tracking-[0.3em] mb-4">Max Card Rate</div>
                     <div class="text-6xl font-black text-wgc-gold-500 tracking-tighter mb-2">2.3%</div>
-                    <div class="text-lg font-black uppercase tracking-[0.3em] text-white/60 mb-6">+ $0.25</div>
+                    <div class="text-lg font-black uppercase tracking-[0.3em] text-white mb-6">+ $0.25</div>
                     <div class="h-px bg-white/10 mb-8 mx-auto w-1/2"></div>
-                    <div class="text-xl font-black text-white">$10<span class="text-xs text-white/40 font-bold ml-2">/ MO PER ORG</span></div>
+                    <div class="text-xl font-black text-white">$10<span class="text-[10px] text-white/70 font-black ml-2 tracking-widest uppercase">/ MO PER ORG</span></div>
                   </div>
                 </div>
               </div>
