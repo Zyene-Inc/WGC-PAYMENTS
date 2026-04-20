@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, ChevronLeft, CheckCircle2, ShieldCheck, Box, UserPlus, CreditCard, BarChart4, Cpu } from 'lucide-angular';
 import { Title, Meta } from '@angular/platform-browser';
-import { ResourceCtaComponent } from '../../../../components/resources/resource-cta.component';
+import { ResourceCtaComponent } from '../../../components/resources/resource-cta.component';
 
 @Component({
   selector: 'app-white-label-guide',
