@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, ChevronLeft, CheckCircle2, ShieldCheck, Box, UserPlus, CreditCard, BarChart4, Cpu } from 'lucide-angular';
 import { Title, Meta } from '@angular/platform-browser';
-import { ResourceCtaComponent } from '../../../components/resources/resource-cta.component';
+import { ResourceCtaComponent } from '../../../../components/resources/resource-cta.component';
 
 @Component({
   selector: 'app-white-label-guide',
@@ -143,7 +143,12 @@ import { ResourceCtaComponent } from '../../../components/resources/resource-cta
 })
 export class WhiteLabelGuideComponent implements OnInit {
   readonly ChevronLeft = ChevronLeft;
+  readonly CheckCircle2 = CheckCircle2;
   readonly Cpu = Cpu;
+  readonly UserPlus = UserPlus;
+  readonly Box = Box;
+  readonly CreditCard = CreditCard;
+  readonly BarChart4 = BarChart4;
 
   meanings = ['Onboarding', 'Checkout', 'Recurring Billing', 'Payouts', 'Reporting'];
   benefits = ['Better brand continuity', 'Smoother user experience', 'Stronger retention', 'Greater ownership of the journey'];

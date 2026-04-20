@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { LucideAngularModule, ArrowRight, BookOpen, Clock, FileText } from 'lucide-angular';
 import { Title, Meta } from '@angular/platform-browser';
 
-import { ResourceCtaComponent } from '../../../components/resources/resource-cta.component';
+import { ResourceCtaComponent } from '../../components/resources/resource-cta.component';
 
 @Component({
   selector: 'app-resource-hub',
