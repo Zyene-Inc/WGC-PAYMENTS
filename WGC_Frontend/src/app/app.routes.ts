@@ -47,6 +47,27 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/legal-compliance/legal-compliance.component').then(c => c.LegalComplianceComponent)
   },
   {
+    path: 'resources',
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./pages/resources/resource-hub.component').then(c => c.ResourceHubComponent)
+      },
+      {
+        path: 'church-payment-processing-guide-2026',
+        loadComponent: () => import('./pages/resources/guides/church-payment-guide.component').then(c => c.ChurchPaymentGuideComponent)
+      },
+      {
+        path: 'white-label-payment-processing-nonprofit-church-software',
+        loadComponent: () => import('./pages/resources/guides/white-label-guide.component').then(c => c.WhiteLabelGuideComponent)
+      },
+      {
+        path: 'church-payment-processing-pricing-guide',
+        loadComponent: () => import('./pages/resources/guides/pricing-guide.component').then(c => c.PricingGuideComponent)
+      }
+    ]
+  },
+  {
     path: 'login',
     loadComponent: () => import('./pages/login/login.component').then(c => c.LoginComponent)
   },
