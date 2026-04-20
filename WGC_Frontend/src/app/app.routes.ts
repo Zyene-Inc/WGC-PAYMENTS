@@ -50,10 +50,6 @@ export const routes: Routes = [
     path: 'resources',
     children: [
       {
-        path: '',
-        loadComponent: () => import('./pages/resources/resource-hub.component').then(c => c.ResourceHubComponent)
-      },
-      {
         path: 'church-payment-processing-guide-2026',
         loadComponent: () => import('./pages/resources/guides/church-payment-guide.component').then(c => c.ChurchPaymentGuideComponent)
       },
