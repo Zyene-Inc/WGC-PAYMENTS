@@ -1,0 +1,101 @@
+<div class="min-h-screen bg-wgc-white">
+  <!-- ==================== INSTITUTIONAL HERO ==================== -->
+  <section class="relative bg-wgc-navy-950 pt-32 pb-24 overflow-hidden border-b border-wgc-navy-800">
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none">
+      <svg class="w-full h-full" fill="none">
+        <pattern id="compliance-grid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+          <path d="M 32 0 L 0 0 0 32" fill="none" stroke="white" stroke-width="0.5"/>
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#compliance-grid)"/>
+      </svg>
+    </div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none" style="font-size: 20rem; color: #eab308; font-weight: 900;">✝</div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 border" style="background: rgba(234,179,8,0.1); border-color: rgba(234,179,8,0.3);">
+        <lucide-icon [img]="ShieldCheck" class="w-3 h-3 text-wgc-gold-500"></lucide-icon>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em]" style="color: rgba(234,179,8,0.9);">Institutional Protocol</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.05] mb-6 text-white uppercase">
+        Security & <span class="text-wgc-gold-500">Compliance</span>
+      </h1>
+      <p class="text-xl font-medium leading-relaxed max-w-2xl mx-auto text-wgc-navy-200">
+        Bank-grade infrastructure meets Kingdom-focused stewardship. We manage the complexity of global payment rails so you can focus on the mission.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <section class="py-24 bg-wgc-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Core Pillars -->
+      <div class="grid md:grid-cols-2 gap-8 mb-24">
+        <div class="bg-wgc-off rounded-3xl p-8 border border-wgc-navy-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-wgc-navy-900 flex items-center justify-center mb-6 shadow-lg">
+            <lucide-icon [img]="Landmark" class="w-6 h-6 text-wgc-gold-500"></lucide-icon>
+          </div>
+          <h3 class="text-xl font-black text-wgc-navy-950 mb-3 uppercase tracking-tight">PCI Level 1 Certified</h3>
+          <p class="text-wgc-navy-600 font-medium leading-relaxed">
+            WGC maintains the highest level of Payment Card Industry Data Security Standard certification. Your data, and your donors' data, is protected by institutional encryption layers.
+          </p>
+        </div>
+        <div class="bg-wgc-off rounded-3xl p-8 border border-wgc-navy-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-wgc-navy-900 flex items-center justify-center mb-6 shadow-lg">
+            <lucide-icon [img]="Lock" class="w-6 h-6 text-wgc-gold-500"></lucide-icon>
+          </div>
+          <h3 class="text-xl font-black text-wgc-navy-950 mb-3 uppercase tracking-tight">AES-256 Encryption</h3>
+          <p class="text-wgc-navy-600 font-medium leading-relaxed">
+            All sensitive financial information is encrypted at rest and in transit. We use hardware security modules (HSMs) to manage keys and ensure absolute vault integrity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Legal Sections -->
+      <div class="prose prose-lg max-w-none text-wgc-navy-900 font-medium">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-1.5 h-10 bg-wgc-gold-500 rounded-full"></div>
+          <h2 class="text-3xl font-black uppercase tracking-tight m-0">Compliance Framework</h2>
+        </div>
+
+        <div class="space-y-12">
+          <section>
+            <h3 class="text-[13px] font-black text-wgc-gold-600 uppercase tracking-[0.2em] mb-4">01. Data Sovereignty</h3>
+            <p class="leading-relaxed">
+              We believe software partners should own their merchant relationships. WGC operates a <strong>Transferable Merchant Vault</strong>, ensuring you are never locked in. Your data belongs to you, and we facilitate secure, PCI-compliant exports whenever required.
+            </p>
+          </section>
+
+          <section>
+            <h3 class="text-[13px] font-black text-wgc-gold-600 uppercase tracking-[0.2em] mb-4">02. AML/KYC Orchestration</h3>
+            <p class="leading-relaxed">
+              Our platform features built-in Anti-Money Laundering (AML) and Know Your Customer (KYC) protocols tailored for the nonprofit sector. We verify identities and monitor for fraudulent activity while maintaining the white-label experience of your software.
+            </p>
+          </section>
+
+          <section>
+            <h3 class="text-[13px] font-black text-wgc-gold-600 uppercase tracking-[0.2em] mb-4">03. Network Security</h3>
+            <p class="leading-relaxed">
+              System access is strictly controlled via multi-factor authentication (MFA) and granular API scopes. We perform regular penetration testing and vulnerability assessments to ensure the WGC network remains an unshakeable foundation for your business.
+            </p>
+          </section>
+        </div>
+
+        <!-- Documentation Link -->
+        <div class="mt-24 p-10 bg-wgc-navy-950 rounded-[2.5rem] border border-wgc-navy-800 relative overflow-hidden group">
+          <div class="absolute -bottom-6 -right-6 opacity-[0.05] pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110" style="font-size: 12rem; color: #eab308; font-weight: 900;">✝</div>
+          <div class="relative z-10">
+            <h3 class="text-2xl font-black text-white mb-4 tracking-tight uppercase">Ready for Audit?</h3>
+            <p class="text-wgc-navy-300 mb-8 max-w-lg">
+              Our security documentation and PCI Attestation of Compliance (AOC) are available to partners upon request.
+            </p>
+            <button class="metallic-gold px-8 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest text-wgc-navy-950 hover:scale-105 transition-transform active:scale-95 shadow-xl">
+              Request Documentation
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
