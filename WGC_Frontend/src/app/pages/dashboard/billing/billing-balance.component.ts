@@ -1,0 +1,185 @@
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { LucideAngularModule, Wallet, Gift, RefreshCw, ChevronLeft, ChevronRight, AlertCircle, CheckCircle2 } from 'lucide-angular';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-billing-balance',
+  standalone: true,
+  imports: [CommonModule, FormsModule, LucideAngularModule, RouterLink],
+  template: `
+    <div class="max-w-4xl mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-20">
+      <!-- Header -->
+      <div class="space-y-1">
+        <h2 class="text-3xl font-black text-wgc-navy-950 tracking-tight uppercase">Treasury Setup</h2>
+        <p class="text-[10px] font-black text-wgc-navy-400 uppercase tracking-[0.3em] font-mono opacity-80 italic">Configure platform balance & automated liquidity</p>
+      </div>
+
+      <!-- Main Setup Card -->
+      <div class="bg-wgc-white border border-wgc-navy-100 rounded-[2.5rem] shadow-premium overflow-hidden">
+        
+        <!-- Step 1: Balance Selection -->
+        <div class="p-10 border-b border-wgc-navy-50">
+          <div class="flex items-start gap-6 mb-10">
+            <div class="w-14 h-14 rounded-2xl bg-wgc-gold-500/10 flex items-center justify-center text-wgc-gold-600 shadow-sm border border-wgc-gold-100">
+              <lucide-icon [img]="Wallet" class="w-7 h-7"></lucide-icon>
+            </div>
+            <div>
+              <h3 class="text-xl font-black text-wgc-navy-950 uppercase tracking-tight mb-1">Starting Balance</h3>
+              <p class="text-[11px] font-bold text-wgc-navy-400 uppercase tracking-widest">Select the initial liquidity for your institutional wallet</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <button *ngFor="let amount of presetAmounts" 
+              (click)="selectedAmount.set(amount)"
+              [class]="selectedAmount() === amount ? 'border-wgc-gold-500 bg-wgc-gold-50 ring-4 ring-wgc-gold-500/10' : 'border-wgc-navy-100 bg-wgc-off hover:border-wgc-navy-300'"
+              class="relative overflow-hidden p-6 rounded-2xl border-2 transition-all group active:scale-95">
+              <div class="text-2xl font-black text-wgc-navy-950 tracking-tighter group-hover:scale-105 transition-transform">
+                ${{ amount }}
+              </div>
+              <div *ngIf="selectedAmount() === amount" class="absolute top-2 right-2">
+                <lucide-icon [img]="CheckCircle2" class="w-4 h-4 text-wgc-gold-600"></lucide-icon>
+              </div>
+            </button>
+            <div class="relative">
+              <input type="number" 
+                (focus)="selectedAmount.set(0)"
+                placeholder="Custom"
+                class="w-full h-full p-6 bg-wgc-off border-2 border-dashed border-wgc-navy-100 rounded-2xl text-lg font-black text-wgc-navy-900 focus:border-wgc-gold-500 focus:bg-wgc-gold-50 focus:ring-4 focus:ring-wgc-gold-500/10 transition-all outline-none placeholder:text-wgc-navy-300">
+            </div>
+          </div>
+
+          <!-- Promo Code Section -->
+          <div class="bg-wgc-off rounded-3xl p-8 border border-wgc-navy-50">
+            <div class="flex items-center gap-3 mb-4">
+              <lucide-icon [img]="Gift" class="w-4 h-4 text-wgc-gold-500"></lucide-icon>
+              <h4 class="text-[11px] font-black text-wgc-navy-950 uppercase tracking-widest">Promo Code</h4>
+            </div>
+            <p class="text-xs text-wgc-navy-400 font-medium mb-6 italic">
+              Use a promo code to get started. You can always add more to your balance after you begin using WGC.
+            </p>
+            <div class="max-w-md">
+              <div class="relative group">
+                <input type="text" [(ngModel)]="promoCode" 
+                  placeholder="Enter code"
+                  [class.border-red-300]="promoError()"
+                  class="w-full bg-wgc-white border-2 border-wgc-navy-100 py-3 px-5 rounded-xl font-mono text-xs font-bold text-wgc-navy-900 focus:border-wgc-navy-950 transition-all outline-none uppercase tracking-widest">
+                <button (click)="applyPromo()" 
+                  class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-wgc-navy-950 text-white rounded-lg text-[9px] font-black uppercase tracking-widest hover:bg-black transition-all">
+                  Apply
+                </button>
+              </div>
+              <div *ngIf="promoError()" class="mt-2 flex items-center gap-2 text-red-500 animate-in fade-in slide-in-from-top-1">
+                <lucide-icon [img]="AlertCircle" class="w-3 h-3"></lucide-icon>
+                <span class="text-[10px] font-black uppercase tracking-widest">Please enter a valid promo code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Auto-Recharge -->
+        <div class="p-10 bg-wgc-off/30">
+          <div class="flex items-center justify-between mb-10">
+            <div class="flex items-start gap-6">
+              <div class="w-14 h-14 rounded-2xl bg-wgc-navy-950 flex items-center justify-center text-wgc-gold-500 shadow-xl">
+                <lucide-icon [img]="RefreshCw" class="w-7 h-7"></lucide-icon>
+              </div>
+              <div>
+                <h3 class="text-xl font-black text-wgc-navy-950 uppercase tracking-tight mb-1">Treasury Auto-Refill</h3>
+                <p class="text-[11px] font-bold text-wgc-navy-400 uppercase tracking-widest italic leading-relaxed">Keep your account up and running with automated capital injections</p>
+              </div>
+            </div>
+            <!-- Toggle Switch -->
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" [(ngModel)]="autoRecharge" class="sr-only peer">
+              <div class="w-14 h-8 bg-wgc-navy-100 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-wgc-gold-500 shadow-inner"></div>
+            </label>
+          </div>
+
+          <div *ngIf="autoRecharge" class="space-y-6 animate-in fade-in slide-in-from-top-4 duration-500">
+            <div class="p-8 bg-wgc-white border border-wgc-navy-100 rounded-3xl shadow-sm">
+                <h4 class="text-[10px] font-black text-wgc-navy-400 uppercase tracking-[0.2em] mb-6">Execution Logic</h4>
+                
+                <div class="space-y-4">
+                  <div (click)="selectedRechargeType.set('standard')"
+                    [class]="selectedRechargeType() === 'standard' ? 'border-wgc-gold-500 bg-wgc-gold-50' : 'border-wgc-navy-50 bg-wgc-off hover:border-wgc-navy-100'"
+                    class="p-6 rounded-2xl border-2 cursor-pointer transition-all flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                      <div class="w-3 h-3 rounded-full border-2 border-wgc-gold-500 flex items-center justify-center">
+                        <div *ngIf="selectedRechargeType() === 'standard'" class="w-1.5 h-1.5 bg-wgc-gold-500 rounded-full"></div>
+                      </div>
+                      <div>
+                        <p class="text-xs font-black text-wgc-navy-950 uppercase tracking-widest">Standard Refill</p>
+                        <p class="text-[10px] font-bold text-wgc-navy-400 uppercase tracking-tighter mt-1 opacity-70 italic">When the balance falls below $10, bring my balance back up to $50</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div (click)="selectedRechargeType.set('custom')"
+                    [class]="selectedRechargeType() === 'custom' ? 'border-wgc-gold-500 bg-wgc-gold-50' : 'border-wgc-navy-50 bg-wgc-off hover:border-wgc-navy-100'"
+                    class="p-6 rounded-2xl border-2 cursor-pointer transition-all flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                      <div class="w-3 h-3 rounded-full border-2 border-wgc-gold-500 flex items-center justify-center">
+                        <div *ngIf="selectedRechargeType() === 'custom'" class="w-1.5 h-1.5 bg-wgc-gold-500 rounded-full"></div>
+                      </div>
+                      <div>
+                        <p class="text-xs font-black text-wgc-navy-950 uppercase tracking-widest">Enterprise Orchestration</p>
+                        <p class="text-[10px] font-bold text-wgc-navy-400 uppercase tracking-tighter mt-1 opacity-70 italic">Define custom thresholds and refill amounts for high-volume environments</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 pt-8 border-t border-wgc-navy-50 flex items-center justify-between">
+                  <a href="#" class="text-[10px] font-black text-wgc-gold-600 uppercase tracking-widest underline hover:text-wgc-navy-950 transition-colors">Learn more about auto recharge</a>
+                  <p class="text-[9px] font-bold text-wgc-navy-400 italic">You can change this later if you want.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="p-8 bg-wgc-navy-950 flex items-center justify-between">
+          <button class="flex items-center gap-2 text-[11px] font-black text-wgc-navy-300 uppercase tracking-[0.2em] hover:text-white transition-all">
+            <lucide-icon [img]="ChevronLeft" class="w-3 h-3"></lucide-icon>
+            Back
+          </button>
+          <button class="bg-wgc-gold-500 text-wgc-navy-950 flex items-center gap-2 px-10 py-4 rounded-xl text-[11px] font-black uppercase tracking-[0.25em] shadow-premium hover:bg-white hover:scale-105 active:scale-95 transition-all">
+            Initiate Treasury
+            <lucide-icon [img]="ChevronRight" class="w-3 h-3"></lucide-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  `
+})
+export class BillingBalanceComponent {
+  presetAmounts = [50, 100, 250, 500];
+  selectedAmount = signal(50);
+  
+  promoCode = '';
+  promoError = signal(false);
+  
+  autoRecharge = true;
+  selectedRechargeType = signal('standard');
+
+  readonly Wallet = Wallet;
+  readonly Gift = Gift;
+  readonly RefreshCw = RefreshCw;
+  readonly ChevronLeft = ChevronLeft;
+  readonly ChevronRight = ChevronRight;
+  readonly AlertCircle = AlertCircle;
+  readonly CheckCircle2 = CheckCircle2;
+
+  applyPromo() {
+    if (!this.promoCode || this.promoCode.length < 4) {
+      this.promoError.set(true);
+      setTimeout(() => this.promoError.set(false), 3000);
+    } else {
+      this.promoError.set(false);
+      // Logic for successful promo
+    }
+  }
+}

@@ -100,6 +100,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/dashboard/migration/migration-job-detail.component').then(c => c.MigrationJobDetailComponent)
       },
       {
+        path: 'billing',
+        loadComponent: () => import('./pages/dashboard/billing/billing-balance.component').then(c => c.BillingBalanceComponent)
+      },
+      {
         path: 'settings',
         loadComponent: () => import('./pages/dashboard/settings/dashboard-settings.component').then(c => c.DashboardSettingsComponent)
       }
