@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
@@ -10,8 +10,31 @@ import { LucideAngularModule, LayoutDashboard, Users, CreditCard, LogOut, Menu, 
   imports: [CommonModule, RouterModule, LucideAngularModule],
   template: `
     <div class="flex h-screen bg-wgc-off overflow-hidden font-sans">
-      <!-- Sidebar -->
+      <!-- Desktop Sidebar -->
       <aside class="hidden md:flex flex-col w-72 bg-wgc-white border-r border-wgc-navy-100 shadow-sm z-20">
+        <ng-container *ngTemplateOutlet="sidebarContent"></ng-container>
+      </aside>
+
+      <!-- Mobile Sidebar Drawer -->
+      <div *ngIf="isMobileMenuOpen()" 
+           class="fixed inset-0 z-50 md:hidden animate-in fade-in duration-300">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-wgc-navy-950/40 backdrop-blur-sm" (click)="toggleMenu()"></div>
+        
+        <!-- Drawer -->
+        <aside class="absolute inset-y-0 left-0 w-72 bg-wgc-white shadow-2xl animate-in slide-in-from-left duration-300 flex flex-col">
+          <div class="p-6 border-b border-wgc-navy-50 flex items-center justify-between">
+            <span class="text-[10px] font-black text-wgc-navy-300 uppercase tracking-widest">Navigation</span>
+            <button (click)="toggleMenu()" class="p-2 text-wgc-navy-400 hover:text-wgc-navy-900 transition-colors">
+              <lucide-icon [img]="X" class="w-5 h-5"></lucide-icon>
+            </button>
+          </div>
+          <ng-container *ngTemplateOutlet="sidebarContent"></ng-container>
+        </aside>
+      </div>
+
+      <!-- Shared Sidebar Content Template -->
+      <ng-template #sidebarContent>
         <div class="flex-1 px-6 py-8 space-y-1 overflow-y-auto">
           <div class="flex items-center gap-3 px-4 mb-10">
             <div class="w-8 h-8 rounded-lg bg-wgc-gold-600 flex items-center justify-center shadow-lg shadow-wgc-gold-600/20">
@@ -24,19 +47,19 @@ import { LucideAngularModule, LayoutDashboard, Users, CreditCard, LogOut, Menu, 
           </div>
 
           <nav class="space-y-1">
-            <a routerLink="/" class="flex items-center px-4 py-3 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-900 transition-all border border-transparent uppercase tracking-[0.2em] mb-4 group">
+            <a routerLink="/" (click)="closeMenu()" class="flex items-center px-4 py-3 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-900 transition-all border border-transparent uppercase tracking-[0.2em] mb-4 group">
               <lucide-icon [img]="Menu" class="w-4 h-4 mr-3 opacity-50"></lucide-icon>
               Back to Home
             </a>
             
             <div class="h-px bg-wgc-navy-50 mb-6 mx-4"></div>
 
-            <a routerLink="/dashboard" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50" [routerLinkActiveOptions]="{exact: true}"
+            <a routerLink="/dashboard" (click)="closeMenu()" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50" [routerLinkActiveOptions]="{exact: true}"
               class="flex items-center px-4 py-3.5 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-950 transition-all border border-transparent uppercase tracking-[0.2em]">
               <lucide-icon [img]="LayoutDashboard" class="w-4 h-4 mr-3"></lucide-icon>
               Dashboard
             </a>
-            <a routerLink="/dashboard/merchants" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
+            <a routerLink="/dashboard/merchants" (click)="closeMenu()" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
               class="flex items-center px-4 py-3.5 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-950 transition-all border border-transparent uppercase tracking-[0.2em]">
               <lucide-icon [img]="Users" class="w-4 h-4 mr-3"></lucide-icon>
               Merchants
@@ -46,17 +69,17 @@ import { LucideAngularModule, LayoutDashboard, Users, CreditCard, LogOut, Menu, 
                <p class="text-[9px] font-black text-wgc-navy-200 uppercase tracking-[0.3em]">Institutional</p>
             </div>
 
-            <a routerLink="/dashboard/payments" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
+            <a routerLink="/dashboard/payments" (click)="closeMenu()" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
               class="flex items-center px-4 py-3.5 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-950 transition-all border border-transparent uppercase tracking-[0.2em]">
               <lucide-icon [img]="CreditCard" class="w-4 h-4 mr-3"></lucide-icon>
               Payments
             </a>
-            <a routerLink="/dashboard/recurring" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
+            <a routerLink="/dashboard/recurring" (click)="closeMenu()" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
               class="flex items-center px-4 py-3.5 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-950 transition-all border border-transparent uppercase tracking-[0.2em]">
               <lucide-icon [img]="RefreshCcw" class="w-4 h-4 mr-3"></lucide-icon>
               Recurring
             </a>
-            <a routerLink="/dashboard/payouts" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
+            <a routerLink="/dashboard/payouts" (click)="closeMenu()" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
               class="flex items-center px-4 py-3.5 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-950 transition-all border border-transparent uppercase tracking-[0.2em]">
               <lucide-icon [img]="Landmark" class="w-4 h-4 mr-3"></lucide-icon>
               Payouts
@@ -66,12 +89,12 @@ import { LucideAngularModule, LayoutDashboard, Users, CreditCard, LogOut, Menu, 
                <p class="text-[9px] font-black text-wgc-navy-200 uppercase tracking-[0.3em]">System</p>
             </div>
 
-            <a routerLink="/dashboard/migration" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
+            <a routerLink="/dashboard/migration" (click)="closeMenu()" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
               class="flex items-center px-4 py-3.5 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-950 transition-all border border-transparent uppercase tracking-[0.2em]">
               <lucide-icon [img]="ArrowUpDown" class="w-4 h-4 mr-3"></lucide-icon>
               Migration
             </a>
-            <a routerLink="/dashboard/settings" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
+            <a routerLink="/dashboard/settings" (click)="closeMenu()" routerLinkActive="bg-wgc-navy-50 text-wgc-navy-950 shadow-sm border-wgc-navy-100/50"
               class="flex items-center px-4 py-3.5 text-[10px] font-bold rounded-xl text-wgc-navy-400 hover:bg-wgc-navy-50 hover:text-wgc-navy-950 transition-all border border-transparent uppercase tracking-[0.2em]">
               <lucide-icon [img]="Settings" class="w-4 h-4 mr-3"></lucide-icon>
               Settings
@@ -86,37 +109,37 @@ import { LucideAngularModule, LayoutDashboard, Users, CreditCard, LogOut, Menu, 
             Logout
           </button>
         </div>
-      </aside>
+      </ng-template>
 
       <!-- Main Content -->
       <div class="flex-1 flex flex-col overflow-hidden">
         <!-- Top Header -->
-        <header class="h-20 bg-wgc-white border-b border-wgc-navy-100/50 flex items-center justify-between px-10 z-10 transition-all">
-          <div class="flex items-center gap-6">
-            <button class="md:hidden p-2 text-wgc-navy-400">
+        <header class="h-20 bg-wgc-white border-b border-wgc-navy-100/50 flex items-center justify-between px-6 md:px-10 z-10 transition-all">
+          <div class="flex items-center gap-4 md:gap-6">
+            <button (click)="toggleMenu()" class="md:hidden p-2 text-wgc-navy-400 hover:bg-wgc-navy-50 rounded-lg transition-colors">
               <lucide-icon [img]="Menu" class="w-6 h-6"></lucide-icon>
             </button>
             <div class="flex flex-col">
-              <span class="text-[9px] font-black text-wgc-gold-600 uppercase tracking-[0.35em] mb-0.5">Platform Console</span>
-              <h1 class="text-lg font-black text-wgc-navy-950 tracking-tight leading-none uppercase">
+              <span class="text-[9px] font-black text-wgc-gold-600 uppercase tracking-[0.35em] mb-0.5 whitespace-nowrap">Platform Console</span>
+              <h1 class="text-sm md:text-lg font-black text-wgc-navy-950 tracking-tight leading-none uppercase truncate max-w-[150px] md:max-w-none">
                 {{ getPageTitle() }}
               </h1>
             </div>
           </div>
           
-          <div class="flex items-center gap-6">
+          <div class="flex items-center gap-3 md:gap-6">
             <div class="text-right hidden sm:block">
-              <p class="text-xs font-black text-wgc-navy-950 tracking-tight">{{ (authService.currentUser$ | async)?.email }}</p>
-              <p class="text-[10px] font-bold text-wgc-navy-400 uppercase tracking-[0.2em] mt-0.5">{{ (authService.currentUser$ | async)?.role?.replace('_', ' ') }}</p>
+              <p class="text-[10px] md:text-xs font-black text-wgc-navy-950 tracking-tight truncate max-w-[120px] md:max-w-none">{{ (authService.currentUser$ | async)?.email }}</p>
+              <p class="text-[8px] md:text-[10px] font-bold text-wgc-navy-400 uppercase tracking-[0.2em] mt-0.5">{{ (authService.currentUser$ | async)?.role?.replace('_', ' ') }}</p>
             </div>
-            <div class="w-11 h-11 rounded-xl bg-wgc-off border border-wgc-navy-100 flex items-center justify-center shadow-sm font-black text-wgc-navy-950 transition-transform active:scale-95">
+            <div class="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-wgc-off border border-wgc-navy-100 flex items-center justify-center shadow-sm font-black text-wgc-navy-950 transition-transform active:scale-95 text-xs md:text-base">
               {{ (authService.currentUser$ | async)?.email?.charAt(0)?.toUpperCase() }}
             </div>
           </div>
         </header>
 
         <!-- Page Outlet -->
-        <main class="flex-1 overflow-y-auto p-10 bg-wgc-off/30 relative">
+        <main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-10 bg-wgc-off/30 relative">
           <div class="relative z-10 max-w-[1600px] mx-auto">
             <router-outlet></router-outlet>
           </div>
@@ -129,6 +152,8 @@ export class DashboardLayoutComponent {
   authService = inject(AuthService);
   router = inject(Router);
 
+  isMobileMenuOpen = signal(false);
+
   readonly LayoutDashboard = LayoutDashboard;
   readonly Users = Users;
   readonly CreditCard = CreditCard;
@@ -139,6 +164,14 @@ export class DashboardLayoutComponent {
   readonly Landmark = Landmark;
   readonly ArrowUpDown = ArrowUpDown;
   readonly Settings = Settings;
+
+  toggleMenu() {
+    this.isMobileMenuOpen.update(v => !v);
+  }
+
+  closeMenu() {
+    this.isMobileMenuOpen.set(false);
+  }
 
   getPageTitle(): string {
     const url = this.router.url;

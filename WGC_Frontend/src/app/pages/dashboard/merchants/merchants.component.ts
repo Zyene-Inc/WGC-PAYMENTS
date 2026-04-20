@@ -52,46 +52,46 @@ import { Subscription } from 'rxjs';
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="bg-wgc-off/50 text-[10px] font-black text-wgc-navy-400 uppercase tracking-[0.2em] border-b border-wgc-navy-50">
-                <th class="px-8 py-5">Church Identity</th>
-                <th class="px-8 py-5 text-center">Lifecycle Phase</th>
-                <th class="px-8 py-5 text-center">Rail Efficiency</th>
-                <th class="px-8 py-5 text-right">Established</th>
-                <th class="px-8 py-5 text-right">Action</th>
+                <th class="px-4 md:px-8 py-5">Church Identity</th>
+                <th class="px-4 md:px-8 py-5 text-center">Lifecycle Phase</th>
+                <th class="px-8 py-5 text-center hidden lg:table-cell">Rail Efficiency</th>
+                <th class="px-8 py-5 text-right hidden sm:table-cell">Established</th>
+                <th class="px-4 md:px-8 py-5 text-right">Action</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-wgc-navy-50">
               <tr *ngFor="let m of filteredMerchants()" class="hover:bg-wgc-off transition-all group">
-                <td class="px-8 py-6">
-                  <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-2xl bg-wgc-navy-50 flex items-center justify-center text-wgc-gold-600 shadow-sm border border-wgc-navy-100 group-hover:bg-white transition-all">
-                       <lucide-icon [img]="Building2" class="w-5 h-5"></lucide-icon>
+                <td class="px-4 md:px-8 py-6">
+                  <div class="flex items-center gap-3 md:gap-4">
+                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl md:rounded-2xl bg-wgc-navy-50 flex items-center justify-center text-wgc-gold-600 shadow-sm border border-wgc-navy-100 group-hover:bg-white transition-all">
+                       <lucide-icon [img]="Building2" class="w-4 h-4 md:w-5 md:h-5"></lucide-icon>
                     </div>
                     <div>
-                      <div class="font-black text-wgc-navy-950 text-base tracking-tight leading-none mb-1.5 cursor-pointer hover:text-wgc-gold-600 transition-colors uppercase" [routerLink]="['/dashboard/merchants', m.id]">\{{ m.name }}</div>
-                      <div class="text-[9px] text-wgc-navy-300 font-mono tracking-tighter uppercase opacity-80">Ref: TRX-\{{ m.id.substring(0,8) }}</div>
+                      <div class="font-black text-wgc-navy-950 text-sm md:text-base tracking-tight leading-none mb-1.5 cursor-pointer hover:text-wgc-gold-600 transition-colors uppercase" [routerLink]="['/dashboard/merchants', m.id]">\{{ m.name }}</div>
+                      <div class="text-[8px] md:text-[9px] text-wgc-navy-300 font-mono tracking-tighter uppercase opacity-80">TRX-\{{ m.id.substring(0,6) }}</div>
                     </div>
                   </div>
                 </td>
-                <td class="px-8 py-6 text-center">
+                <td class="px-4 md:px-8 py-6 text-center">
                   <span [ngClass]="{
                     'bg-wgc-gold-50 text-wgc-gold-700 border-wgc-gold-100': m.onboardingStatus === 'live',
                     'bg-wgc-navy-50 text-wgc-navy-700 border-wgc-navy-100': m.onboardingStatus === 'pending',
                     'bg-red-50 text-red-700 border-red-100': m.onboardingStatus === 'failed'
-                  }" class="px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest border shadow-sm font-mono">
+                  }" class="px-3 py-1 rounded-full text-[8px] md:text-[9px] font-black uppercase tracking-widest border shadow-sm font-mono">
                     \{{ m.onboardingStatus }}
                   </span>
                 </td>
-                <td class="px-8 py-6 text-center">
+                <td class="px-8 py-6 text-center hidden lg:table-cell">
                    <div class="flex items-center justify-center gap-1.5">
                      <div class="w-1.5 h-1.5 rounded-full" [ngClass]="m.onboardingStatus === 'live' ? 'bg-wgc-gold-600 shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-wgc-navy-200'"></div>
                      <span class="text-[10px] font-black text-wgc-navy-400 uppercase tracking-widest font-mono">\{{ m.onboardingStatus === 'live' ? '100% HEALTH' : 'SYNCING' }}</span>
                    </div>
                 </td>
-                <td class="px-8 py-6 text-right tabular-nums text-wgc-navy-400 font-black text-[10px] uppercase tracking-tighter">
+                <td class="px-8 py-6 text-right tabular-nums text-wgc-navy-400 font-black text-[10px] uppercase tracking-tighter hidden sm:table-cell">
                   \{{ m.createdAt | date:'MMM dd, yyyy' }}
                 </td>
-                <td class="px-8 py-6 text-right">
-                   <button [routerLink]="['/dashboard/merchants', m.id]" class="p-2.5 hover:bg-white border border-transparent hover:border-wgc-navy-100 rounded-xl text-wgc-navy-300 hover:text-wgc-navy-900 transition-all shadow-none hover:shadow-sm">
+                <td class="px-4 md:px-8 py-6 text-right">
+                   <button [routerLink]="['/dashboard/merchants', m.id]" class="p-2 md:p-2.5 hover:bg-white border border-transparent hover:border-wgc-navy-100 rounded-xl text-wgc-navy-300 hover:text-wgc-navy-900 transition-all shadow-none hover:shadow-sm">
                       <lucide-icon [img]="ChevronRight" class="w-4 h-4"></lucide-icon>
                    </button>
                 </td>

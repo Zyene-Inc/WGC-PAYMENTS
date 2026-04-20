@@ -45,22 +45,23 @@ import { ArrowLeft, LucideAngularModule } from 'lucide-angular';
             </div>
 
             <div>
-              <label for="password" class="block text-sm font-medium text-wgc-gray-700">Password</label>
+              <label for="password" class="block text-xs font-bold text-wgc-navy-400 uppercase tracking-widest mb-2">Password</label>
               <div class="mt-1">
                 <input id="password" type="password" formControlName="password" autocomplete="current-password" required
-                  class="appearance-none block w-full px-3 py-2 border border-wgc-gray-300 rounded-md shadow-sm placeholder-wgc-gray-400 focus:outline-none focus:ring-wgc-blue-500 focus:border-wgc-blue-500 sm:text-sm">
+                  placeholder="••••••••"
+                  class="appearance-none block w-full px-4 py-3 border border-wgc-navy-100 rounded-xl shadow-sm placeholder-wgc-navy-200 focus:outline-none focus:ring-2 focus:ring-wgc-gold-500/20 focus:border-wgc-gold-500 sm:text-sm bg-wgc-off/50">
               </div>
             </div>
 
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <input id="remember-me" name="remember-me" type="checkbox"
-                  class="h-4 w-4 text-wgc-blue-600 focus:ring-wgc-blue-500 border-wgc-gray-300 rounded">
-                <label for="remember-me" class="ml-2 block text-sm text-wgc-gray-900">Remember me</label>
+                  class="h-4 w-4 text-wgc-gold-600 focus:ring-wgc-gold-500 border-wgc-navy-200 rounded">
+                <label for="remember-me" class="ml-2 block text-xs font-bold text-wgc-navy-400 uppercase tracking-widest">Remember me</label>
               </div>
 
-              <div class="text-sm">
-                <a href="#" class="font-medium text-wgc-blue-600 hover:text-wgc-blue-500">Forgot your password?</a>
+              <div class="text-[11px] font-bold">
+                <a href="#" class="text-wgc-gold-600 hover:text-wgc-gold-500 transition-colors uppercase tracking-wider">Forgot your password?</a>
               </div>
             </div>
 

@@ -52,43 +52,43 @@ import { LucideAngularModule, Search, Filter, Download, CreditCard, Landmark, Re
           <table class="w-full text-left text-sm">
             <thead>
               <tr class="bg-wgc-navy-50/50 text-[10px] font-bold text-wgc-navy-400 uppercase tracking-[0.15em] border-b border-wgc-navy-50">
-                <th class="px-8 py-4">Identity</th>
-                <th class="px-8 py-4">Merchant</th>
-                <th class="px-8 py-4 text-center">Rail</th>
-                <th class="px-8 py-4 text-right">Amount</th>
-                <th class="px-8 py-4 text-center">Status</th>
-                <th class="px-8 py-4 text-right">Executed At</th>
+                <th class="px-4 md:px-8 py-4">Identity</th>
+                <th class="px-8 py-4 hidden lg:table-cell">Merchant</th>
+                <th class="px-4 md:px-8 py-4 text-center">Rail</th>
+                <th class="px-4 md:px-8 py-4 text-right">Amount</th>
+                <th class="px-4 md:px-8 py-4 text-center">Status</th>
+                <th class="px-8 py-4 text-right hidden sm:table-cell">Executed At</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-wgc-navy-50">
               <tr *ngFor="let payment of payments()" class="hover:bg-wgc-navy-50/30 transition-colors group">
-                <td class="px-8 py-5">
-                  <div class="font-bold text-wgc-navy-900 text-xs">{{ payment.donor?.name || 'Authorized Donor' }}</div>
-                  <div class="text-[10px] text-wgc-navy-400 font-mono tracking-tighter uppercase mt-0.5">#{{ payment.id.substring(0,8) }}</div>
+                <td class="px-4 md:px-8 py-5">
+                  <div class="font-bold text-wgc-navy-900 text-[11px] md:text-xs truncate max-w-[100px] md:max-w-none">{{ payment.donor?.name || 'Authorized Donor' }}</div>
+                  <div class="text-[9px] md:text-[10px] text-wgc-navy-400 font-mono tracking-tighter uppercase mt-0.5">#{{ payment.id.substring(0,8) }}</div>
                 </td>
-                <td class="px-8 py-5 text-wgc-navy-400 font-bold text-xs uppercase tracking-tight">{{ payment.merchant?.legalName }}</td>
-                <td class="px-8 py-5 text-center">
-                   <div class="inline-flex items-center gap-1.5 px-2 py-1 bg-wgc-off rounded text-[9px] font-bold text-wgc-navy-400 border border-wgc-navy-50">
+                <td class="px-8 py-5 text-wgc-navy-400 font-bold text-xs uppercase tracking-tight hidden lg:table-cell">{{ payment.merchant?.legalName }}</td>
+                <td class="px-4 md:px-8 py-5 text-center">
+                   <div class="inline-flex items-center gap-1.5 px-2 py-1 bg-wgc-off rounded text-[8px] md:text-[9px] font-bold text-wgc-navy-400 border border-wgc-navy-50">
                      <lucide-icon [img]="payment.method === 'CARD' ? CreditCard : Landmark" class="w-3 h-3 text-wgc-navy-300"></lucide-icon>
-                     {{ payment.method }}
+                     <span class="hidden md:inline">{{ payment.method }}</span>
                    </div>
                 </td>
-                <td class="px-8 py-5 font-bold text-wgc-navy-900 text-right tabular-nums">
+                <td class="px-4 md:px-8 py-5 font-bold text-wgc-navy-900 text-right tabular-nums text-[11px] md:text-sm">
                   {{ payment.amount | currency }}
                 </td>
-                <td class="px-8 py-5 text-center">
+                <td class="px-4 md:px-8 py-5 text-center">
                   <span [ngClass]="{
                     'bg-green-100 text-green-700 border-green-200': payment.status === 'success',
                     'bg-yellow-100 text-yellow-700 border-yellow-200': payment.status === 'pending',
                     'bg-red-100 text-red-700 border-red-200': payment.status === 'failed'
-                  }" class="px-2.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest border shadow-sm">
+                  }" class="px-2 md:px-2.5 py-1 rounded-full text-[8px] md:text-[9px] font-bold uppercase tracking-widest border shadow-sm">
                     {{ payment.status }}
                   </span>
                 </td>
-                <td class="px-8 py-5 text-right tabular-nums text-wgc-navy-400 font-bold text-xs uppercase">{{ payment.createdAt | date:'MMM d, h:mm a' }}</td>
+                <td class="px-8 py-5 text-right tabular-nums text-wgc-navy-400 font-bold text-[10px] md:text-xs uppercase hidden sm:table-cell">{{ payment.createdAt | date:'MMM d, h:mm a' }}</td>
               </tr>
               <tr *ngIf="!payments()?.length">
-                <td colspan="6" class="px-8 py-16 text-center text-wgc-navy-300">
+                <td colspan="6" class="px-4 md:px-8 py-16 text-center text-wgc-navy-300">
                    <p class="text-[10px] font-bold uppercase tracking-widest">No transaction records found</p>
                 </td>
               </tr>

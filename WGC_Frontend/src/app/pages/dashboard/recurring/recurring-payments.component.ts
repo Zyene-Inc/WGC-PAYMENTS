@@ -79,55 +79,55 @@ import { EmptyStateComponent } from '../../../components/ui/empty-state/empty-st
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="bg-wgc-off/50 text-[10px] font-black text-wgc-navy-400 uppercase tracking-[0.2em] border-b border-wgc-navy-50 font-mono">
-                <th class="px-10 py-5">Subscribing Partner</th>
-                <th class="px-10 py-5">Institutional Link</th>
-                <th class="px-10 py-5 text-right">Commitment</th>
-                <th class="px-10 py-5">Cycle</th>
-                <th class="px-10 py-5 text-center">Protocol State</th>
-                <th class="px-10 py-5 text-right">Settlement Date</th>
-                <th class="px-10 py-5 text-center">Audit</th>
+                <th class="px-4 md:px-10 py-5">Subscribing Partner</th>
+                <th class="px-10 py-5 hidden xl:table-cell">Institutional Link</th>
+                <th class="px-4 md:px-10 py-5 text-right">Commitment</th>
+                <th class="px-10 py-5 hidden sm:table-cell">Cycle</th>
+                <th class="px-4 md:px-10 py-5 text-center">Protocol State</th>
+                <th class="px-10 py-5 text-right hidden md:table-cell">Settlement Date</th>
+                <th class="px-4 md:px-10 py-5 text-center">Audit</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-wgc-navy-50">
               <tr *ngFor="let rec of filteredRecurring()" class="hover:bg-wgc-off transition-all group">
-                <td class="px-10 py-8">
-                  <div class="flex items-center gap-4">
-                     <div class="w-10 h-10 rounded-2xl bg-wgc-navy-50 flex items-center justify-center text-wgc-gold-600 shadow-sm border border-wgc-navy-100 group-hover:bg-white transition-all">
-                        <lucide-icon [img]="CreditCard" class="w-5 h-5"></lucide-icon>
+                <td class="px-4 md:px-10 py-6 md:py-8">
+                  <div class="flex items-center gap-3 md:gap-4">
+                     <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl md:rounded-2xl bg-wgc-navy-50 flex items-center justify-center text-wgc-gold-600 shadow-sm border border-wgc-navy-100 group-hover:bg-white transition-all">
+                        <lucide-icon [img]="CreditCard" class="w-4 h-4 md:w-5 md:h-5"></lucide-icon>
                      </div>
                      <div>
-                       <div class="font-black text-wgc-navy-950 text-sm tracking-tight leading-none mb-1.5 uppercase transition-colors group-hover:text-wgc-gold-600 cursor-pointer uppercase">\{{ rec.donor?.name || 'Anonymous Giver' }}</div>
-                       <div class="text-[9px] text-wgc-navy-300 font-bold uppercase tracking-[0.2em] font-mono">\{{ rec.donor?.email }}</div>
+                       <div class="font-black text-wgc-navy-950 text-xs md:text-sm tracking-tight leading-none mb-1.5 uppercase transition-colors group-hover:text-wgc-gold-600 cursor-pointer uppercase truncate max-w-[120px] md:max-w-none">\{{ rec.donor?.name || 'Anonymous Giver' }}</div>
+                       <div class="text-[8px] md:text-[9px] text-wgc-navy-300 font-bold uppercase tracking-[0.2em] font-mono truncate max-w-[120px] md:max-w-none">\{{ rec.donor?.email }}</div>
                      </div>
                   </div>
                 </td>
-                <td class="px-10 py-8">
+                <td class="px-10 py-8 hidden xl:table-cell">
                   <span class="text-[10px] font-black text-wgc-navy-400 uppercase tracking-widest italic opacity-70">\{{ rec.merchant?.name || 'Core Hub' }}</span>
                 </td>
-                <td class="px-10 py-8 font-black text-wgc-navy-950 text-lg text-right tabular-nums tracking-tighter">
+                <td class="px-4 md:px-10 py-6 md:py-8 font-black text-wgc-navy-950 text-base md:text-lg text-right tabular-nums tracking-tighter">
                   $\{{ rec.amount | number:'1.2-2' }}
                 </td>
-                <td class="px-10 py-8">
+                <td class="px-10 py-8 hidden sm:table-cell">
                    <span class="px-3 py-1 bg-wgc-navy-50 text-wgc-navy-600 border border-wgc-navy-100 rounded-lg text-[9px] font-black uppercase tracking-widest font-mono">\{{ rec.interval }}</span>
                 </td>
-                <td class="px-10 py-8 text-center">
+                <td class="px-4 md:px-10 py-6 md:py-8 text-center">
                   <span [ngClass]="{
                     'bg-wgc-gold-50 text-wgc-gold-700 border-wgc-gold-100': rec.status === 'active',
                     'bg-wgc-navy-50 text-wgc-navy-700 border-wgc-navy-100': rec.status === 'paused',
                     'bg-red-50 text-red-700 border-red-100': rec.status === 'cancelled'
-                  }" class="px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest border shadow-sm">
+                  }" class="px-2.5 py-1.5 rounded-full text-[8px] md:text-[9px] font-black uppercase tracking-widest border shadow-sm">
                     \{{ rec.status }}
                   </span>
                 </td>
-                <td class="px-10 py-8 text-right tabular-nums text-wgc-navy-400 font-black text-[10px] uppercase tracking-tighter opacity-70">
+                <td class="px-10 py-8 text-right tabular-nums text-wgc-navy-400 font-black text-[10px] uppercase tracking-tighter opacity-70 hidden md:table-cell">
                   \{{ rec.nextBillingDate | date:'MMM dd, yyyy' || 'SYNC_ERROR' }}
                 </td>
-                <td class="px-10 py-8 text-center">
+                <td class="px-4 md:px-10 py-6 md:py-8 text-center">
                   <div class="flex items-center justify-center gap-2">
-                    <button *ngIf="rec.status === 'active'" (click)="toggleState(rec, 'paused')" title="Pause Engine" class="p-2.5 text-wgc-navy-300 hover:text-wgc-gold-600 hover:bg-white rounded-xl transition-all border border-transparent hover:border-wgc-navy-100 shadow-none hover:shadow-sm">
+                    <button *ngIf="rec.status === 'active'" (click)="toggleState(rec, 'paused')" title="Pause Engine" class="p-2 md:p-2.5 text-wgc-navy-300 hover:text-wgc-gold-600 hover:bg-white rounded-xl transition-all border border-transparent hover:border-wgc-navy-100 shadow-none hover:shadow-sm">
                       <lucide-icon [img]="Pause" class="w-4 h-4"></lucide-icon>
                     </button>
-                    <button *ngIf="rec.status === 'paused'" (click)="toggleState(rec, 'active')" title="Resume Engine" class="p-2.5 text-wgc-navy-300 hover:text-wgc-gold-600 hover:bg-white rounded-xl transition-all border border-transparent hover:border-wgc-navy-100 shadow-none hover:shadow-sm">
+                    <button *ngIf="rec.status === 'paused'" (click)="toggleState(rec, 'active')" title="Resume Engine" class="p-2 md:p-2.5 text-wgc-navy-300 hover:text-wgc-gold-600 hover:bg-white rounded-xl transition-all border border-transparent hover:border-wgc-navy-100 shadow-none hover:shadow-sm">
                       <lucide-icon [img]="Play" class="w-4 h-4"></lucide-icon>
                     </button>
                   </div>
