@@ -198,14 +198,15 @@
 <section class="relative py-32 lg:py-48 overflow-hidden bg-wgc-navy-900 border-y border-wgc-navy-800">
   <div class="absolute inset-0 z-0 h-full w-full">
     <img src="/nonprofit-impact.png" alt="Mission Impact" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-wgc-navy-900/75 backdrop-blur-[2px]"></div>
+    <!-- Fixed Overlay using standard CSS -->
+    <div class="absolute inset-0" style="background-color: rgba(1, 4, 9, 0.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);"></div>
   </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" appScrollFade>
     <div class="text-[10px] font-black text-wgc-gold-500 uppercase tracking-[0.4em] mb-10">Stewardship First</div>
-    <h2 class="text-4xl lg:text-7xl font-black text-white mb-10 tracking-tighter leading-[1.05] max-w-5xl mx-auto">
+    <h2 class="text-4xl lg:text-7xl font-black text-white mb-10 tracking-tighter leading-[1.05] max-w-5xl mx-auto" style="text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
       Saved capital means <span class="text-wgc-gold-500 italic">greater impact.</span>
     </h2>
-    <p class="text-xl text-wgc-navy-100 font-medium max-w-3xl mx-auto leading-relaxed">
+    <p class="text-xl text-white font-bold max-w-3xl mx-auto leading-relaxed" style="text-shadow: 0 5px 20px rgba(0,0,0,0.5);">
       Every dollar your organization saves in processing fees is another dollar that goes directly to food, medicine, shelter, and spreading the Gospel. We take that stewardship seriously.
     </p>
   </div>
