@@ -13,16 +13,14 @@ import { ArrowLeft, LucideAngularModule } from 'lucide-angular';
   template: `
     <div class="min-h-screen bg-wgc-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div class="sm:mx-auto sm:w-full sm:max-w-md text-center">
-        <a routerLink="/" class="inline-flex items-center mb-10 cursor-pointer group">
-          <!-- New Primary WGC Logo Asset -->
-          <div class="h-14 w-auto transform transition-all duration-300">
-            <img src="/wgc-brand-final.png" alt="WGC Payments" class="h-full w-auto object-contain">
-          </div>
-        </a>
-        <a routerLink="/" class="inline-flex items-center mb-6 text-xs font-bold text-wgc-navy-400 hover:text-wgc-navy-900 transition-all uppercase tracking-widest group">
-          <lucide-icon [img]="ArrowLeft" class="w-3 h-3 mr-2 group-hover:-translate-x-1 transition-transform"></lucide-icon>
-          Back to Home
-        </a>
+        <div class="flex flex-col items-center justify-center mb-10 w-full">
+          <a routerLink="/" class="block cursor-pointer group">
+            <!-- Institutional WGC Logo (SVG) -->
+            <div class="h-24 w-auto transform transition-all duration-500 group-hover:scale-105">
+              <img src="/wgc-logo.svg" alt="Waypoint Gateway Collective" class="h-full w-auto object-contain">
+            </div>
+          </a>
+        </div>
         <h2 class="text-3xl font-extrabold text-wgc-navy-900 tracking-tight">Create your account</h2>
         <p class="mt-3 text-sm text-wgc-navy-400 font-medium">
           Or
