@@ -64,13 +64,30 @@ import { LucideAngularModule, CreditCard, Landmark, RefreshCcw, ShieldCheck, Che
               </div>
             </div>
 
+            <div class="flex items-center justify-between p-6 bg-wgc-gray-50 rounded-2xl border border-wgc-navy-100 mb-4">
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-wgc-gold-500/10 text-wgc-gold-600 rounded-xl">
+                  <lucide-icon [img]="ShieldCheck" class="w-5 h-5"></lucide-icon>
+                </div>
+                <div>
+                  <p class="text-[11px] font-bold text-wgc-navy-900 uppercase tracking-widest leading-none">Cover processing fees</p>
+                  <p class="text-[9px] text-wgc-navy-400 font-medium mt-1 uppercase tracking-wider">Ensure 100% of your gift reaches the mission</p>
+                </div>
+              </div>
+              <button (click)="coverFees.set(!coverFees())" 
+                 class="w-14 h-7 rounded-full transition-all flex items-center px-1 border border-wgc-navy-100"
+                 [ngClass]="coverFees() ? 'bg-wgc-gold-500' : 'bg-wgc-navy-100'">
+                 <div class="w-5 h-5 bg-wgc-white rounded-full transition-transform" [ngClass]="coverFees() ? 'translate-x-7' : 'translate-x-0'"></div>
+              </button>
+            </div>
+
             <div class="flex items-center justify-between p-6 bg-wgc-gray-50 rounded-2xl border border-wgc-navy-100">
               <div class="flex items-center gap-4">
                 <div class="p-3 bg-wgc-gold-500/10 text-wgc-gold-600 rounded-xl">
                   <lucide-icon [img]="RefreshCcw" class="w-5 h-5"></lucide-icon>
                 </div>
                 <div>
-                  <p class="text-[11px] font-bold text-wgc-navy-900 uppercase tracking-widest leading-none">Make this recurring</p>
+                  <p class="text-[11px] font-bold text-wgc-navy-900 uppercase tracking-widest leading-none">Start monthly partnership</p>
                 </div>
               </div>
               <button (click)="isRecurring.set(!isRecurring())" 
