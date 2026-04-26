@@ -54,18 +54,26 @@ export default function Home() {
                   <span className="text-[10px] font-black uppercase tracking-[0.4em] text-wgc-gold-500/90 font-mono">Institutional Rails</span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-8 !text-white">
-                  Payment infrastructure for software that serves <span className="text-wgc-gold-500 italic">the Church.</span>
+                  Payment infrastructure for software that serves <span className="text-wgc-gold-500 italic">the Church</span> & <span className="text-wgc-navy-300">Nonprofits.</span>
                 </h1>
                 <p className="text-lg sm:text-xl font-medium leading-relaxed mb-12 text-wgc-navy-400 max-w-2xl tracking-tight">
                   WGC provides the white-label donation engine and institutional settlement rails for the platforms building the future of Kingdom stewardship.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col sm:flex-row gap-6 mb-16">
                   <Link href="/contact" className="bg-wgc-gold-500 text-wgc-navy-950 inline-flex items-center justify-center px-10 py-5 text-[13px] font-bold rounded-2xl shadow-[0_20px_40px_rgba(234,179,8,0.2)] transform transition-all hover:scale-105 hover:bg-white uppercase tracking-widest">
                     Request Connection
                   </Link>
                   <Link href="/developers" className="inline-flex items-center justify-center px-10 py-5 text-[13px] font-bold rounded-2xl transition-all border border-white/20 text-white/80 hover:bg-white hover:text-wgc-navy-950 uppercase tracking-widest">
                     View Protocol
                   </Link>
+                </div>
+
+                {/* Stewardship Partners */}
+                <div className="flex flex-wrap items-center gap-x-12 gap-y-6 pt-8 border-t border-white/5 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-wgc-gold-500 font-mono">Stewardship Partners</span>
+                  <span className="text-lg font-black text-white tracking-tighter">Grace Community Church</span>
+                  <span className="text-lg font-black text-white tracking-tighter">World Relief</span>
+                  <span className="text-lg font-black text-white tracking-tighter">Mission Global</span>
                 </div>
               </ScrollFade>
  
