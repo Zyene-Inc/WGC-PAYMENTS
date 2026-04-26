@@ -68,12 +68,12 @@ export default function Home() {
                   </Link>
                 </div>
 
-                {/* Stewardship Partners */}
+                {/* Institutional Focus */}
                 <div className="flex flex-wrap items-center gap-x-12 gap-y-6 pt-8 border-t border-white/5 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-wgc-gold-500 font-mono">Stewardship Partners</span>
-                  <span className="text-lg font-black text-white tracking-tighter">Grace Community Church</span>
-                  <span className="text-lg font-black text-white tracking-tighter">World Relief</span>
-                  <span className="text-lg font-black text-white tracking-tighter">Mission Global</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-wgc-gold-500 font-mono">Institutional Focus</span>
+                  <span className="text-lg font-black text-white tracking-tighter">Churches</span>
+                  <span className="text-lg font-black text-white tracking-tighter">Ministries</span>
+                  <span className="text-lg font-black text-white tracking-tighter">Global Nonprofits</span>
                 </div>
               </ScrollFade>
  
