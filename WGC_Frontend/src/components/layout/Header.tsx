@@ -90,14 +90,14 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button 
               type="button" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-xl text-white hover:bg-wgc-navy-900 transition-all"
+              className="inline-flex items-center justify-center p-2 rounded-xl text-wgc-navy-950 hover:bg-wgc-navy-50 transition-all"
             >
               <span className="sr-only">Open main menu</span>
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
         </div>
