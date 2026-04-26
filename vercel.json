@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd WGC_Frontend && npm run build",
+  "outputDirectory": "WGC_Frontend/.next",
+  "framework": "nextjs"
+}
