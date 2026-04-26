@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, CheckCircle2, ShieldCheck, Zap, Globe, BarChart3, Settings } from "lucide-react";
 import Header from "@/components/layout/Header";
@@ -82,9 +83,12 @@ export default function SoftwarePartnersPage() {
               <ScrollFade delay={200}>
                 <div className="mt-16 lg:mt-0 relative group">
                   <div className="relative rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 aspect-[4/5] lg:aspect-auto lg:h-[600px]">
-                    <img 
+                    <Image 
                       src="/images/partners.png" 
                       alt="Partner Collaboration"
+                      width={800}
+                      height={1000}
+                      priority
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 brightness-[1.02]"
                     />
                     

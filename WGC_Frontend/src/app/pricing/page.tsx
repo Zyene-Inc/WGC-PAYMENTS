@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import Header from "@/components/layout/Header";
@@ -64,9 +65,12 @@ export default function PricingPage() {
               <ScrollFade delay={200} className="lg:col-span-5">
                 <div className="relative group">
                   <div className="relative rounded-[3rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-wgc-navy-100 aspect-[4/5] lg:aspect-auto lg:h-[600px]">
-                    <img 
+                    <Image 
                       src="/images/pricing.png" 
                       alt="Financial Stewardship Report"
+                      width={800}
+                      height={1000}
+                      priority
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 brightness-[1.02]"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-wgc-navy-950/90 backdrop-blur-md p-10 border-t border-white/10">
