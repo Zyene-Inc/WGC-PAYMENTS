@@ -1,5 +1,4 @@
 {
-  "framework": null,
-  "buildCommand": "cd WGC_Frontend && npx prisma generate && npm run build",
-  "outputDirectory": "WGC_Frontend/.next"
+  "buildCommand": "npx prisma generate && next build",
+  "outputDirectory": ".next"
 }
