@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { DollarSign, Users, PiggyBank, Briefcase, Loader2, ArrowRight } from "lucide-react";
+import { DollarSign, Users, PiggyBank, Briefcase, Loader2, ArrowRight, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Mock data for the demo
@@ -12,14 +12,14 @@ const MOCK_STATS = {
   averageDonation: 27282, // $272.82
   volumeByFund: [
     { name: "General Giving", amount: 2845010 },
-    { name: "Missions", amount: 841040 },
-    { name: "Global Relief", amount: 570000 },
+    { name: "International Missions", amount: 841040 },
+    { name: "Community Impact", amount: 570000 },
   ],
   recentDonations: [
     { date: new Date().toISOString(), donor: "Johnathan Doe", fund: "General Giving", amount: 25000 },
-    { date: new Date(Date.now() - 3600000).toISOString(), donor: "Sarah Miller", fund: "Missions", amount: 10000 },
+    { date: new Date(Date.now() - 3600000).toISOString(), donor: "Sarah Miller", fund: "International Missions", amount: 10000 },
     { date: new Date(Date.now() - 7200000).toISOString(), donor: "Michael Thompson", fund: "General Giving", amount: 50000 },
-    { date: new Date(Date.now() - 10800000).toISOString(), donor: "Grace Family Trust", fund: "Global Relief", amount: 100000 },
+    { date: new Date(Date.now() - 10800000).toISOString(), donor: "Grace Mission Trust", fund: "Community Impact", amount: 100000 },
     { date: new Date(Date.now() - 14400000).toISOString(), donor: "Esther Williams", fund: "General Giving", amount: 15000 },
   ]
 };
@@ -61,7 +61,7 @@ export default function DemoDashboardPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-wgc-gold-500 text-[10px] font-bold tracking-widest uppercase mb-4 font-mono border border-wgc-gold-500/20">
             Preview Environment
           </div>
-          <h1 className="text-3xl font-bold text-wgc-navy-900 tracking-tight">What your church users will see</h1>
+          <h1 className="text-3xl font-bold text-wgc-navy-900 tracking-tight">What your mission-driven users will see</h1>
           <p className="mt-2 text-lg text-slate-500 font-medium tracking-tight opacity-80">A clean, focused dashboard powered by WGC infrastructure, styled to match your software.</p>
         </div>
 
@@ -71,8 +71,8 @@ export default function DemoDashboardPage() {
           {/* Fake Nav Bar within the mock */}
           <div className="border-b border-slate-100 bg-slate-50/50 px-8 py-5 flex justify-between items-center bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%23f1f5f9%22%20stroke-width%3D%221.5%22%20d%3D%22M1%201h18v18H1z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px_20px]">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wgc-gold-500 font-bold shadow-lg border border-wgc-gold-500/20">C</div>
-              <span className="font-bold text-wgc-navy-900 tracking-tight">ChurchSoft Admin</span>
+              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wgc-gold-500 font-bold shadow-lg border border-wgc-gold-500/20">G</div>
+              <span className="font-bold text-wgc-navy-900 tracking-tight">Grace Stewardship Admin</span>
             </div>
             <div className="hidden sm:block text-[10px] font-bold text-wgc-navy-500 uppercase tracking-[0.2em] font-mono animate-pulse">Read-only preview protocol</div>
             <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center border-2 border-white shadow-sm overflow-hidden">
@@ -152,7 +152,7 @@ export default function DemoDashboardPage() {
               <div className="space-y-6">
                 {/* Live Activity Card */}
                 <div className="bg-slate-950 p-8 rounded-[2.5rem] border border-slate-800 shadow-2xl relative overflow-hidden group">
-                  <div className="absolute -bottom-4 -right-4 opacity-[0.05] pointer-events-none select-none text-8xl font-bold text-wgc-gold-500 leading-none">✝</div>
+                  <div className="absolute -bottom-4 -right-4 opacity-[0.05] pointer-events-none select-none text-8xl font-bold text-wgc-gold-500 leading-none"><Heart className="w-24 h-24" /></div>
                   <h3 className="font-bold text-wgc-navy-900 mb-8 tracking-tight relative z-10">Live Activity</h3>
                   <div className="space-y-6 relative z-10">
                      {stats?.volumeByFund.map((fund) => (

@@ -2,13 +2,13 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { Church, CheckCircle, HelpCircle, Loader2, AlertCircle, ShieldCheck } from "lucide-react";
+import { Heart, CheckCircle, HelpCircle, Loader2, AlertCircle, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollFade from "@/components/ui/ScrollFade";
 
-const FUNDS = ["General Giving", "Missions", "Global Relief Fund"];
+const FUNDS = ["General Giving", "International Missions", "Community Impact"];
 const PRESET_AMOUNTS = [25, 50, 100, 250];
 
 export default function DemoDonationPage() {
@@ -133,12 +133,12 @@ export default function DemoDonationPage() {
             {/* Church Identity (White-labeled) */}
             <div className="text-center mb-12">
               <div className="w-20 h-20 rounded-[1.5rem] bg-white flex items-center justify-center text-wgc-gold-500 mx-auto mb-6 shadow-xl relative ring-1 ring-wgc-navy-100">
-                 <Church className="w-10 h-10" />
+                 <Heart className="w-10 h-10" />
                  <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-lg bg-wgc-gold-500 flex items-center justify-center shadow-lg border border-white">
                     <CheckCircle className="w-4 h-4 text-wgc-navy-900" />
                  </div>
               </div>
-              <h2 className="text-2xl font-bold text-wgc-navy-900 tracking-tight">Grace Community Church</h2>
+              <h2 className="text-2xl font-bold text-wgc-navy-900 tracking-tight">Grace Stewardship Mission</h2>
               <p className="text-[10px] font-bold text-wgc-navy-400 uppercase tracking-[0.25em] mt-3 font-mono">White-Label Gift Interface</p>
             </div>
 
