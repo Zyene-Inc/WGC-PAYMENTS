@@ -203,10 +203,7 @@ export default function Home() {
                       alt="Nonprofit Mission Impact"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-[0.85]"
                     />
-                  <div className="absolute inset-0 bg-gradient-to-t from-wgc-navy-950 via-wgc-navy-950/40 to-transparent flex flex-col justify-end p-10">
-                    <h3 className="text-3xl font-bold text-white mb-4 tracking-tight leading-tight">Saving money for mission.</h3>
-                    <p className="text-white text-base font-medium leading-relaxed opacity-90 max-w-sm">Every dollar saved on processing is a dollar that stays on the front lines of ministry.</p>
-                  </div>
+
                 </div>
               </ScrollFade>
 
