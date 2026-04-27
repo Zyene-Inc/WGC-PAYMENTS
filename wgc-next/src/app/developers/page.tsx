@@ -175,7 +175,7 @@ export default function DevelopersPage() {
                       </div>
                       <h3 className="text-xl font-bold text-wgc-navy-900">Base Production URL</h3>
                     </div>
-                    <div className="bg-white text-wgc-gold-500 rounded-2xl p-6 font-mono text-[14px] border border-wgc-navy-800 shadow-inner select-all">
+                    <div className="bg-white text-wgc-gold-500 rounded-2xl p-6 font-mono text-[14px] border border-wgc-navy-800 shadow-inner select-all break-all">
                       https://api.waypointgateway.com/api/v1
                     </div>
                   </div>
