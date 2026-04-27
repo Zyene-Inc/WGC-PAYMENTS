@@ -62,7 +62,7 @@ export default function DevelopersPage() {
                   WGC API<br /><span className="text-wgc-gold-500">Documentation</span>
                 </h1>
                 <p className="text-xl font-medium leading-relaxed mb-10 text-wgc-navy-500 tracking-tight">
-                  The institutional infrastructure for church payments. Build embedded giving experiences directly into your platform — fully white-labeled.
+                  The ministry infrastructure for church payments. Build embedded giving experiences directly into your platform — fully white-labeled.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   {["REST API", "Live Webhooks", "Sandbox Ready"].map((tag) => (
@@ -87,7 +87,7 @@ export default function DevelopersPage() {
                     <div className="absolute bottom-0 left-0 right-0 bg-slate-950/90 backdrop-blur-md p-10 border-t border-white/10">
                       <div className="relative z-10 flex items-center gap-3 mb-6">
                         <div className="w-10 h-px bg-wgc-gold-500"></div>
-                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-wgc-gold-500/70">Institutional Excellence</span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-wgc-gold-500/70">Ministry Excellence</span>
                       </div>
 
                       <blockquote className="mb-6">
@@ -176,7 +176,7 @@ export default function DevelopersPage() {
                       <h3 className="text-xl font-bold text-wgc-navy-900">Base Production URL</h3>
                     </div>
                     <div className="bg-white text-wgc-gold-500 rounded-2xl p-6 font-mono text-[14px] border border-wgc-navy-800 shadow-inner select-all">
-                      https://api.waypointgateway.com/api/api/v1
+                      https://api.waypointgateway.com/api/v1
                     </div>
                   </div>
                 </ScrollFade>
@@ -263,7 +263,7 @@ export default function DevelopersPage() {
                     <div className="p-8 rounded-3xl bg-wgc-off border border-wgc-navy-100 shadow-sm">
                       <h4 className="font-bold text-wgc-navy-900 mb-4 tracking-tight">Card Settlements</h4>
                       <p className="text-[15px] text-wgc-navy-500 font-medium leading-relaxed tracking-tight opacity-90">
-                        Institutional-grade card processing, capped at 2.3% + $0.25 per transaction. Rates reduce as volume grows.
+                        Ministry-grade card processing, capped at 2.3% + $0.25 per transaction. Rates reduce as volume grows.
                       </p>
                     </div>
                     <div className="p-8 rounded-3xl bg-wgc-off border border-wgc-navy-100 shadow-sm">

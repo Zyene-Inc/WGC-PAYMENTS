@@ -8,7 +8,7 @@ export default function CompliancePage() {
     <>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* INSTITUTIONAL HERO */}
+        {/* MINISTRY HERO */}
         <section className="relative bg-white pt-32 pb-24 overflow-hidden border-b border-wgc-navy-800">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
             <svg className="w-full h-full" fill="none">
@@ -24,7 +24,7 @@ export default function CompliancePage() {
             <ScrollFade>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 border border-wgc-gold-500/30 bg-wgc-gold-500/10 font-mono">
                 <ShieldCheck className="w-3 h-3 text-wgc-gold-500" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-wgc-gold-500/90">Institutional Protocol</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-wgc-gold-500/90">Ministry Protocol</span>
               </div>
               <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-wgc-navy-900">
                 Security & <span className="text-wgc-gold-500">Compliance</span>
@@ -48,7 +48,7 @@ export default function CompliancePage() {
                   </div>
                   <h3 className="text-xl font-bold text-wgc-navy-900 mb-3 tracking-tight">PCI Level 1 Certified</h3>
                   <p className="text-wgc-navy-600 font-medium leading-relaxed tracking-tight opacity-90">
-                    WGC maintains the highest level of Payment Card Industry Data Security Standard certification. Your data, and your donors&apos; data, is protected by institutional encryption layers.
+                    WGC maintains the highest level of Payment Card Industry Data Security Standard certification. Your data, and your donors&apos; data, is protected by ministry-grade encryption layers.
                   </p>
                 </div>
                 <div className="bg-wgc-off rounded-3xl p-8 border border-wgc-navy-100 shadow-sm transition-transform hover:-translate-y-1">

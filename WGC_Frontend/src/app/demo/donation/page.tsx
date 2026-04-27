@@ -273,7 +273,7 @@ export default function DemoDonationPage() {
                       <>
                         <input
                           type="text"
-                          placeholder="Institutional Card Registry"
+                          placeholder="Ministry Card Registry"
                           className="block w-full px-5 py-4 border-b border-wgc-navy-100 sm:text-sm bg-transparent focus:outline-none font-mono text-wgc-navy-900 placeholder:text-wgc-navy-300 uppercase"
                           value={cardNumber}
                           onChange={(e) => setCardNumber(e.target.value)}
@@ -402,7 +402,7 @@ export default function DemoDonationPage() {
                 <div className="mt-12 pt-10 border-t border-wgc-navy-50">
                   <p className="text-[10px] font-bold text-wgc-navy-400 uppercase tracking-widest mb-8 font-mono">Deployment Log Verified</p>
                   <Link href="/demo/church-dashboard" className="flex w-full justify-center items-center py-5 px-6 bg-wgc-navy-50 border border-wgc-navy-100 rounded-2xl text-[10px] font-bold text-wgc-navy-900 uppercase tracking-[0.2em] hover:bg-black hover:text-wgc-navy-900 hover:border-black transition-all shadow-sm">
-                    Review Institutional Metrics →
+                    Review Ministry Metrics →
                   </Link>
                 </div>
               </div>

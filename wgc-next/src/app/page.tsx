@@ -25,7 +25,7 @@ const IMPACT_ITEMS = [
   {
     icon: ShieldCheck,
     title: "PCI compliance",
-    description: "Level 1 security for institutional trust. We handle the security overhead.",
+    description: "Level 1 security for ministry trust. We handle the security overhead.",
   },
 ];
 
@@ -51,13 +51,13 @@ export default function Home() {
               <ScrollFade className="lg:col-span-7">
                 <div className="inline-flex items-center gap-3 px-5 py-2 rounded-xl mb-10 border border-wgc-gold-500/20 bg-wgc-gold-500/5 backdrop-blur-sm">
                   <div className="w-2 h-2 rounded-full bg-wgc-gold-500 animate-pulse"></div>
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-wgc-gold-500/90 font-mono">Institutional Rails</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-wgc-gold-500/90 font-mono">Ministry Rails</span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-8 !text-white">
                   Payment infrastructure for software that serves <span className="text-wgc-gold-500 italic">the Church.</span>
                 </h1>
-                <p className="text-lg sm:text-xl font-medium leading-relaxed mb-12 text-wgc-navy-400 max-w-2xl tracking-tight">
-                  WGC provides the white-label donation engine and institutional settlement rails for the platforms building the future of Kingdom stewardship.
+                <p className="text-lg sm:text-xl font-medium leading-relaxed mb-12 text-white/70 max-w-2xl tracking-tight">
+                  WGC provides the white-label donation engine and ministry settlement rails for the platforms building the future of Kingdom stewardship.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <Link href="/contact" className="bg-wgc-gold-500 text-wgc-navy-950 inline-flex items-center justify-center px-10 py-5 text-[13px] font-bold rounded-2xl shadow-[0_20px_40px_rgba(234,179,8,0.2)] transform transition-all hover:scale-105 hover:bg-white uppercase tracking-widest">
@@ -69,7 +69,7 @@ export default function Home() {
                 </div>
               </ScrollFade>
  
-              {/* RIGHT: Institutional Gallery Frame */}
+              {/* RIGHT: Ministry Gallery Frame */}
               <ScrollFade delay={200} className="lg:col-span-5">
                 <div className="relative group">
                   <div className="relative rounded-[3rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.4)] border border-white/10 aspect-[4/5] lg:aspect-auto lg:h-[600px]">
@@ -166,35 +166,35 @@ export default function Home() {
                 {/* Step 3 */}
                 <div className="bg-wgc-off rounded-3xl p-10 w-full max-w-[320px] shadow-xl border border-wgc-navy-100">
                   <div className="text-[9px] font-bold text-wgc-navy-400 uppercase tracking-widest mb-6 font-mono">Settlement</div>
-                  <h3 className="text-xl font-bold text-wgc-navy-950 tracking-tight">Institutional <br />Merchant</h3>
+                  <h3 className="text-xl font-bold text-wgc-navy-950 tracking-tight">Ministry <br />Merchant</h3>
                 </div>
               </div>
             </ScrollFade>
           </div>
         </section>
 
-        {/* INSTITUTIONAL IMPACT */}
+        {/* MINISTRY IMPACT */}
         <section className="pt-20 pb-32 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollFade>
               <div className="text-center mb-24">
                 <div className="inline-flex items-center px-6 py-3 rounded-xl bg-wgc-navy-50 text-wgc-navy-950 text-[11px] font-black uppercase tracking-widest border border-wgc-navy-100 font-mono mb-12">
-                   Institutional Stewardship
+                   Ministry Stewardship
                 </div>
                 <h2 className="text-5xl sm:text-7xl lg:text-8xl font-black text-wgc-navy-950 tracking-tight mb-8 leading-none">The Partner Advantage</h2>
                 <p className="text-[13px] text-wgc-navy-400 font-bold max-w-2xl mx-auto leading-relaxed tracking-widest opacity-70">
-                  WGC provides the technical foundation so you can focus on building the best experience for your institutions.
+                  WGC provides the technical foundation so you can focus on building the best experience for your ministries.
                 </p>
               </div>
             </ScrollFade>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
               <ScrollFade className="lg:col-span-1">
                 <div className="relative rounded-[3rem] overflow-hidden shadow-2xl h-full min-h-[450px] group border border-wgc-navy-100">
-                  <img 
-                    src="/images/nonprofit.png" 
-                    alt="Nonprofit Mission Impact"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-[1.05]"
-                  />
+                    <img 
+                      src="/images/nonprofit_dark.png" 
+                      alt="Nonprofit Mission Impact"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-[0.85]"
+                    />
                   <div className="absolute bottom-0 left-0 right-0 bg-wgc-navy-950/90 backdrop-blur-md p-8 border-t border-white/10">
                     <h3 className="text-xl font-bold text-white mb-2 tracking-tight leading-tight">Saving money for mission.</h3>
                     <p className="text-white/70 text-[12px] font-medium leading-relaxed">Every dollar saved on processing is a dollar that stays on the front lines of ministry.</p>
@@ -272,7 +272,7 @@ export default function Home() {
               <div className="w-20 h-1 bg-wgc-gold-500 mx-auto mb-16 rounded-full shadow-sm shadow-wgc-gold-500/20"></div>
               <blockquote className="space-y-12">
                 <p className="text-4xl sm:text-5xl lg:text-7xl font-bold italic leading-[1.05] !text-white tracking-tight">
-                  &quot;We empower institutions that serve the Kingdom to be <span className="text-wgc-gold-500">unstoppable</span>. We provide the infrastructure; you provide the mission.&quot;
+                  &quot;We empower ministries that serve the Kingdom to be <span className="text-wgc-gold-500">unstoppable</span>. We provide the infrastructure; you provide the mission.&quot;
                 </p>
                 <footer className="flex items-center justify-center gap-6">
                   <div className="w-12 h-px bg-white/20"></div>
@@ -293,7 +293,7 @@ export default function Home() {
                   Resources & Guides
                 </div>
                 <h2 className="text-3xl font-bold text-wgc-navy-950 tracking-tight">
-                  Institutional stewardship
+                  Ministry stewardship
                 </h2>
               </div>
 
@@ -323,7 +323,7 @@ export default function Home() {
             </ScrollFade>
             
             <ScrollFade>
-              <div className="overflow-hidden rounded-3xl bg-white shadow-xl border border-wgc-navy-100">
+              <div className="overflow-x-auto rounded-3xl bg-white shadow-xl border border-wgc-navy-100">
                 <table className="w-full text-left">
                   <thead className="bg-wgc-off text-wgc-navy-900">
                     <tr>
@@ -354,7 +354,7 @@ export default function Home() {
         {/* FINAL CALL */}
         <section className="bg-wgc-navy-950 pb-20 border-t border-white/5">
           <CTASection 
-            headline="Ready to establish your institutional registry?"
+            headline="Ready to establish your ministry registry?"
             subheadline="Join the movement of software partners building the future of Kingdom stewardship."
             ctaText="Request Connection"
             ctaLink="/register"

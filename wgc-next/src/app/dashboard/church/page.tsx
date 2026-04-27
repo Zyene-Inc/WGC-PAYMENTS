@@ -122,7 +122,7 @@ export default function ChurchDashboardPage() {
            
            <div className="flex items-center justify-between mb-16 px-4">
               <div>
-                 <h3 className="text-2xl font-bold text-wgc-navy-900 tracking-tight">Institutional Money Flow</h3>
+                 <h3 className="text-2xl font-bold text-wgc-navy-900 tracking-tight">Ministry Money Flow</h3>
                  <footer className="flex items-center gap-3 mt-3">
                     <div className="w-10 h-px bg-wgc-gold-500/30"></div>
                     <span className="text-[10px] font-bold text-wgc-gold-600 uppercase tracking-[0.3em] font-mono">Full Transparency Engine</span>

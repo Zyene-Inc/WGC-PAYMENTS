@@ -196,7 +196,7 @@ export default function DemoDashboardPage() {
           <div className="inline-flex items-center gap-4 bg-white px-8 py-4 rounded-2xl border border-wgc-gold-500/20 shadow-2xl animate-in slide-in-from-bottom-8 duration-700">
             <div className="w-2 h-2 rounded-full bg-wgc-gold-500 animate-ping"></div>
             <p className="text-sm font-bold text-wgc-navy-600 uppercase tracking-widest font-mono">
-              Live preview fetching data from the <span className="text-wgc-gold-500">WGC Institutional API</span>.
+              Live preview fetching data from the <span className="text-wgc-gold-500">WGC Ministry API</span>.
             </p>
           </div>
         </div>

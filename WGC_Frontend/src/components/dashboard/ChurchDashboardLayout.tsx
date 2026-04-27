@@ -132,7 +132,7 @@ export default function ChurchDashboardLayout({ children }: { children: React.Re
             <div className="flex-1 max-w-xl hidden sm:block">
               <div className="relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-wgc-navy-300" />
-                <input type="text" placeholder="Institutional Search Engine..." 
+                <input type="text" placeholder="Ministry Search Engine..." 
                   className="w-full pl-11 pr-4 py-2.5 bg-wgc-off border border-wgc-navy-100/40 text-[11px] font-bold uppercase tracking-widest rounded-xl focus:outline-none focus:border-wgc-gold-500/50 transition-all placeholder:text-wgc-navy-200 font-mono" />
               </div>
             </div>

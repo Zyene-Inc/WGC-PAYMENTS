@@ -89,7 +89,7 @@ export default function DashboardHomePage() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <h2 className="text-3xl font-bold text-wgc-navy-900 tracking-tight">Overview Dashboard</h2>
-            <p className="text-[11px] font-medium text-wgc-navy-400 uppercase tracking-widest mt-1 font-mono">Institutional monitoring of platform-wide stewardships.</p>
+            <p className="text-[11px] font-medium text-wgc-navy-400 uppercase tracking-widest mt-1 font-mono">Ministry monitoring of platform-wide stewardships.</p>
           </div>
           <button className="bg-white border border-wgc-navy-100 shadow-sm text-wgc-navy-900 px-8 py-3.5 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-black hover:text-wgc-navy-900 hover:border-black transition-all active:scale-95 font-mono">
             System Analytics
@@ -159,7 +159,7 @@ export default function DashboardHomePage() {
               <thead>
                 <tr className="bg-wgc-navy-50/30 text-[10px] font-bold text-wgc-navy-400 uppercase tracking-[0.15em] border-b border-wgc-navy-50 font-mono">
                   <th className="px-10 py-5">Identity Protocol</th>
-                  <th className="px-10 py-5">Institutional Recipient</th>
+                  <th className="px-10 py-5">Ministry Recipient</th>
                   <th className="px-10 py-5 text-right">Settled Amount</th>
                   <th className="px-10 py-5 text-center">Execution Status</th>
                   <th className="px-10 py-5 text-right">Execution Mark</th>

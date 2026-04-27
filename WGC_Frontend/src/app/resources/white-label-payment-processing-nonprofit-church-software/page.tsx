@@ -118,7 +118,7 @@ export default function WhiteLabelGuidePage() {
                 <section>
                   <div className="flex items-center gap-4 mb-12">
                     <div className="w-1.5 h-8 bg-wgc-gold-500 rounded-full"></div>
-                    <h2 className="text-2xl font-bold tracking-tight m-0">Institutional Pillars</h2>
+                    <h2 className="text-2xl font-bold tracking-tight m-0">Ministry Pillars</h2>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {FEATURE_BLOCKS.map((block) => (

@@ -8,7 +8,7 @@ import ScrollFade from "@/components/ui/ScrollFade";
 const FEATURES = [
   {
     title: "White-Labeled Infrastructure",
-    description: "Launch your own payment platform in days. WGC stays hidden while providing the institutional rails your partners expect.",
+    description: "Launch your own payment platform in days. WGC stays hidden while providing the ministry rails your partners expect.",
     icon: Settings,
   },
   {
@@ -128,7 +128,7 @@ export default function SoftwarePartnersPage() {
               <div className="text-center mb-16">
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-wgc-navy-50 text-wgc-navy-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-6 border border-wgc-navy-100 font-mono">Partnership focus</div>
                 <h2 className="text-4xl font-bold text-wgc-navy-900 tracking-tight">Built for the platforms you trust</h2>
-                <p className="text-lg text-wgc-navy-500 font-medium max-w-2xl mx-auto mt-4 tracking-tight opacity-90">Providing institutional-grade payment rails beneath the software that ministries use every day.</p>
+                <p className="text-lg text-wgc-navy-500 font-medium max-w-2xl mx-auto mt-4 tracking-tight opacity-90">Providing ministry-grade payment rails beneath the software that ministries use every day.</p>
               </div>
             </ScrollFade>
             
@@ -191,7 +191,7 @@ export default function SoftwarePartnersPage() {
               <ScrollFade delay={300} className="w-full lg:flex-1 relative z-10">
                 <div className="h-full p-12 rounded-[2.5rem] border border-wgc-navy-100 bg-wgc-off shadow-sm hover:bg-white hover:shadow-xl transition-all duration-500 group">
                   <div className="text-[10px] font-bold text-wgc-navy-400 uppercase tracking-[0.3em] mb-8 font-mono group-hover:text-wgc-gold-600">Final Recipients</div>
-                  <div className="text-3xl font-bold text-wgc-navy-900 tracking-tighter leading-none">Institutional <br />Merchant</div>
+                  <div className="text-3xl font-bold text-wgc-navy-900 tracking-tighter leading-none">Ministry <br />Merchant</div>
                 </div>
               </ScrollFade>
             </div>
@@ -235,7 +235,7 @@ export default function SoftwarePartnersPage() {
                   &quot;We exist to make software companies that serve churches more successful. We&apos;re not building a direct-to-church product. We&apos;re your silent infrastructure.&quot;
                 </p>
                 <p className="text-lg font-medium leading-relaxed tracking-tight opacity-90">
-                  WGC is the institutional infrastructure under your software — aligned with your growth and your mission. By using a transferable vault and providing flat-rate ACH, we ensure that your platform scales efficiently while honoring the donors&apos; generosity.
+                  WGC is the ministry infrastructure under your software — aligned with your growth and your mission. By using a transferable vault and providing flat-rate ACH, we ensure that your platform scales efficiently while honoring the donors&apos; generosity.
                 </p>
               </div>
             </ScrollFade>

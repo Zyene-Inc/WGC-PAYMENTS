@@ -54,7 +54,7 @@ export default function ResourcesPage() {
                 Stewardship <span className="text-wgc-gold-500">Resources</span>
               </h1>
               <p className="text-xl font-medium leading-relaxed max-w-2xl mx-auto text-wgc-navy-200 tracking-tight opacity-90">
-                Insights, guides, and technical briefings for church software partners and institutional leaders.
+                Insights, guides, and technical briefings for church software partners and ministry leaders.
               </p>
             </ScrollFade>
           </div>

@@ -7,7 +7,7 @@ export default function TermsPage() {
     <>
       <Header />
       <main className="min-h-screen bg-white font-sans">
-        {/* INSTITUTIONAL HERO */}
+        {/* MINISTRY HERO */}
         <section className="relative bg-white pt-32 pb-24 overflow-hidden border-b border-wgc-navy-800 text-center">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
             <svg className="w-full h-full" fill="none">
@@ -91,7 +91,7 @@ export default function TermsPage() {
                     <h2 className="text-2xl font-bold tracking-tight m-0">4. Settlement & Payouts</h2>
                   </div>
                   <p className="leading-relaxed">
-                    Card settlements typically follow a T+2 business day schedule. ACH settlements may take up to 3-5 business days depending on the processing bank. WGC reserves the right to delay payouts or hold reserves in the event of high refund/chargeback activity or suspected institutional risk.
+                    Card settlements typically follow a T+2 business day schedule. ACH settlements may take up to 3-5 business days depending on the processing bank. WGC reserves the right to delay payouts or hold reserves in the event of high refund/chargeback activity or suspected ministry risk.
                   </p>
                 </section>
 

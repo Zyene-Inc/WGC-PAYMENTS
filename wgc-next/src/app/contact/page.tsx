@@ -63,7 +63,7 @@ export default function ContactPage() {
                     </div>
                     
                     <div>
-                      <label htmlFor="email" className="block text-[10px] font-bold text-wgc-navy-400 uppercase tracking-widest mb-2 ml-1 font-mono">Institutional Email</label>
+                      <label htmlFor="email" className="block text-[10px] font-bold text-wgc-navy-400 uppercase tracking-widest mb-2 ml-1 font-mono">Ministry Email</label>
                       <div className="mt-1">
                         <input type="email" name="email" id="email" className="block w-full bg-wgc-navy-50/50 border-wgc-navy-100/50 focus:ring-wgc-gold-500 focus:border-wgc-gold-500 rounded-xl p-4 border sm:text-sm transition-all font-bold text-wgc-navy-900" />
                       </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                           <span className="font-bold text-xl">WGC</span>
                         </div>
                         <div>
-                          <h3 className="font-bold text-xl text-wgc-navy-900 tracking-tight">Institutional Sales</h3>
+                          <h3 className="font-bold text-xl text-wgc-navy-900 tracking-tight">Ministry Sales</h3>
                           <p className="text-[11px] font-bold text-wgc-gold-600 uppercase tracking-widest font-mono">Strategic Partnerships</p>
                         </div>
                       </div>

@@ -80,7 +80,7 @@ export default function PricingGuidePage() {
                     <div className="absolute top-0 right-0 w-96 h-96 bg-wgc-gold-500/10 blur-[150px] rounded-full"></div>
                     <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                        <div>
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-wgc-navy-900 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 shadow-lg shadow-white/10 font-mono">Institutional Standard</div>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-wgc-navy-900 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 shadow-lg shadow-white/10 font-mono">Ministry Standard</div>
                         <h3 className="text-3xl font-bold mb-6 tracking-tight leading-tight text-wgc-navy-900 italic">Simplified<br/>Orchestration</h3>
                         <ul className="space-y-4 list-none p-0">
                           {PRICING_ITEMS.map((item) => (
@@ -130,7 +130,7 @@ export default function PricingGuidePage() {
                     <div className="w-1.5 h-8 bg-wgc-gold-500 rounded-full"></div>
                     <h2 className="text-2xl font-bold tracking-tight m-0">Payout visibility and reporting tools</h2>
                   </div>
-                  <p className="opacity-80">Organizations can track payment activity, payout status, recurring transactions, and complete donation history from the dashboard. This visibility is crucial for institutional financial audit and stewardship.</p>
+                  <p className="opacity-80">Organizations can track payment activity, payout status, recurring transactions, and complete donation history from the dashboard. This visibility is crucial for ministry financial audit and stewardship.</p>
                 </section>
               </ScrollFade>
 

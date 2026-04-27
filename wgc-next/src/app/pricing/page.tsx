@@ -27,7 +27,7 @@ export default function PricingPage() {
     <>
       <Header />
       <main className="flex-grow">
-        {/* INSTITUTIONAL HERO */}
+        {/* MINISTRY HERO */}
         <section className="relative bg-white pt-40 pb-24 overflow-hidden border-b border-wgc-navy-50">
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
             <svg className="w-full h-full" fill="none">
@@ -72,7 +72,7 @@ export default function PricingPage() {
                     <div className="absolute bottom-0 left-0 right-0 bg-wgc-navy-950/90 backdrop-blur-md p-10 border-t border-white/10">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-8 h-px bg-wgc-gold-500"></div>
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-wgc-gold-500 font-mono">Institutional Trust</span>
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-wgc-gold-500 font-mono">Ministry Trust</span>
                       </div>
                       <p className="text-lg font-bold leading-snug italic text-white tracking-tight">
                         &quot;Trust is built on transparency and stewardship of every dollar.&quot;
@@ -163,7 +163,7 @@ export default function PricingPage() {
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-wgc-navy-900 mb-2">Capped card processing rates</h4>
-                      <p className="text-[15px] font-medium text-wgc-navy-500 leading-relaxed opacity-80">We utilize institutional-grade rails to cap our card fees, ensuring your larger ministry gifts aren&apos;t drained by standard retail margins.</p>
+                      <p className="text-[15px] font-medium text-wgc-navy-500 leading-relaxed opacity-80">We utilize ministry-grade rails to cap our card fees, ensuring your larger ministry gifts aren&apos;t drained by standard retail margins.</p>
                     </div>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ export default function PricingPage() {
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-wgc-navy-50 text-wgc-gold-600 text-[9px] font-bold tracking-[0.2em] uppercase mb-8 border border-wgc-navy-100 font-mono">Built For</div>
                 <h3 className="text-xl font-bold text-wgc-navy-900 mb-6 tracking-tight underline underline-offset-8 decoration-wgc-gold-500 decoration-2">Who this is for</h3>
                 <p className="text-[15px] font-medium text-wgc-navy-500 leading-relaxed mb-8 tracking-tight opacity-80">
-                  WGC provides institutional donation costs for specific ecosystem partners:
+                  WGC provides ministry donation costs for specific ecosystem partners:
                 </p>
                 <div className="space-y-4">
                   {TARGET_GROUPS.map((group) => (

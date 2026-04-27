@@ -140,7 +140,7 @@ export default function Header() {
               onClick={closeMenu}
               className="w-full flex items-center justify-center px-6 py-4 border border-white/10 rounded-xl text-[12px] font-bold text-white bg-white/5 tracking-wide transition-all active:scale-95"
             >
-              Institutional Login
+              Ministry Login
             </Link>
             <Link 
               href="/register" 

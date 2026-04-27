@@ -132,7 +132,7 @@ export default function ChurchPaymentGuidePage() {
                     </div>
                     <h2 className="text-2xl font-bold tracking-tight m-0">Choosing a setup for growth</h2>
                   </div>
-                  <p className="mb-0 opacity-80 font-medium leading-relaxed">The best setup supports donor confidence today and institutional scale tomorrow. WGC is designed to power the branded payment experiences and recurring billing visibility required by modern church software environments.</p>
+                  <p className="mb-0 opacity-80 font-medium leading-relaxed">The best setup supports donor confidence today and ministry scale tomorrow. WGC is designed to power the branded payment experiences and recurring billing visibility required by modern church software environments.</p>
                 </section>
               </ScrollFade>
 

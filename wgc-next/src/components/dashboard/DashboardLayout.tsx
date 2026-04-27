@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard, exact: true },
   { name: "Merchants", href: "/dashboard/merchants", icon: Users },
-  { name: "Payments", href: "/dashboard/payments", icon: CreditCard, group: "Institutional" },
+  { name: "Payments", href: "/dashboard/payments", icon: CreditCard, group: "Ministry" },
   { name: "Recurring", href: "/dashboard/recurring", icon: RefreshCcw },
   { name: "Payouts", href: "/dashboard/payouts", icon: Landmark },
   { name: "Migration", href: "/dashboard/migration", icon: ArrowUpDown, group: "System" },
@@ -44,7 +44,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     if (pathname === "/dashboard/recurring") return "Recurring Payments";
     if (pathname === "/dashboard/payouts") return "Payout Management";
     if (pathname === "/dashboard/migration") return "Migration Center";
-    if (pathname === "/dashboard/settings") return "Institutional Configuration";
+    if (pathname === "/dashboard/settings") return "Ministry Configuration";
     return "WGC Platform";
   };
 
