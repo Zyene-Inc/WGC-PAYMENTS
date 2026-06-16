@@ -8,13 +8,95 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  email      String   @unique
-  password   String
-  role       String   // partner_admin, church_admin, wgc_admin
-  merchantId String?  // links church_admin to their church
-  createdAt  DateTime @default(now())
+  id               String                 @id @default(uuid())
+  email            String                 @unique
+  password         String
+  fullName         String?
+  role             String                 @default("church_admin") // partner_admin, church_admin, wgc_admin
+  merchantId       String?                // links church_admin to their church
+  organization     Organization?
+  createdAt        DateTime               @default(now())
 }
+
+model Organization {
+  id                    String                 @id @default(uuid())
+  userId                String                 @unique
+  user                  User                   @relation(fields: [userId], references: [id])
+  legalName             String
+  dbaName               String?
+  entityType            String?                // Church, Nonprofit, 501(c)(3), Religious Organization, Other
+  ein                   String?
+  stateOfFormation      String?
+  address               String?
+  city                  String?
+  state                 String?
+  zip                   String?
+  website               String?
+  primaryContactName    String?
+  primaryContactEmail   String?
+  primaryContactPhone   String?
+  representatives       AuthorizedRepresentative[]
+  application           OnboardingApplication?
+  createdAt             DateTime               @default(now())
+}
+
+model AuthorizedRepresentative {
+  id               String       @id @default(uuid())
+  organizationId   String
+  organization     Organization @relation(fields: [organizationId], references: [id])
+  legalName        String
+  title            String
+  dob              String?
+  ssnItinLast4     String?
+  email            String?
+  phone            String?
+  residentialAddress String?
+  createdAt        DateTime     @default(now())
+}
+
+model OnboardingApplication {
+  id                         String             @id @default(uuid())
+  organizationId             String             @unique
+  organization               Organization       @relation(fields: [organizationId], references: [id])
+  status                     String             @default("draft") // draft, submitted, under_review, needs_more_info, approved, rejected
+  estimatedMonthlyVolume     Float?
+  averageTransactionSize     Float?
+  largestExpectedTransaction Float?
+  primaryFundingSource       String?
+  processingUseCase          String?            // Tithes, Offerings, Donations, Program Fees, Events, Membership Contributions, Other
+  organizationPurpose        String?
+  acceptAch                  Boolean            @default(false)
+  acceptCard                 Boolean            @default(false)
+  recurringDonations         Boolean            @default(false)
+  textToGive                 Boolean            @default(false)
+  documents                  UploadedDocument[]
+  events                     ApplicationEvent[]
+  submittedAt                DateTime?
+  approvedAt                 DateTime?
+  rejectedAt                 DateTime?
+  lastUpdatedAt              DateTime           @updatedAt
+  createdAt                  DateTime           @default(now())
+}
+
+model UploadedDocument {
+  id            String                @id @default(uuid())
+  applicationId String
+  application   OnboardingApplication @relation(fields: [applicationId], references: [id])
+  documentType  String                // IRS Determination Letter, Government ID, Voided Check, etc.
+  fileUrl       String
+  status        String                @default("pending")
+  uploadedAt    DateTime              @default(now())
+}
+
+model ApplicationEvent {
+  id            String                @id @default(uuid())
+  applicationId String
+  application   OnboardingApplication @relation(fields: [applicationId], references: [id])
+  eventType     String
+  message       String
+  createdAt     DateTime              @default(now())
+}
+
 
 model Partner {
   id         String          @id @default(uuid())

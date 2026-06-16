@@ -17,13 +17,27 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "WGC | Payment infrastructure for software that serves the Church",
+  metadataBase: new URL("https://www.wgcpayments.com"),
+  title: "WGC — Payments Built for Church Software",
   description: "Waypoint Gateway Collective is the embedded payment processing rail for church and nonprofit software. Lower fees, instant payouts, white-label ready.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "WGC — Payments Built for Church Software",
-    description: "The embedded payments rail trusted by ministries and the software that serves them.",
+    description: "Waypoint Gateway Collective is the embedded payment processing rail for church and nonprofit software. Lower fees, instant payouts, white-label ready.",
     type: "website",
-    images: ["/assets/og-wgc.png"],
+    images: ["/wgc-brand-final.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WGC — Payments Built for Church Software",
+    description: "Waypoint Gateway Collective is the embedded payment processing rail for church and nonprofit software. Lower fees, instant payouts, white-label ready.",
+    images: ["/wgc-brand-final.png"],
   },
   icons: {
     icon: "/favicon.png",

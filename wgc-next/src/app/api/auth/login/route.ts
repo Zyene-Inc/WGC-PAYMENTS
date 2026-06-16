@@ -14,7 +14,16 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { email, password } = loginSchema.parse(body);
 
-    const user = await prisma.user.findUnique({ where: { email } });
+    const user = await prisma.user.findUnique({ 
+      where: { email },
+      include: {
+        organization: {
+          include: {
+            application: true
+          }
+        }
+      }
+    });
     if (!user) {
       return NextResponse.json({ message: "Invalid credentials" }, { status: 401 });
     }
@@ -25,7 +34,7 @@ export async function POST(req: NextRequest) {
     }
 
     const token = jwt.sign(
-      { userId: user.id, role: user.role, merchantId: user.merchantId },
+      { userId: user.id, role: user.role },
       process.env.JWT_SECRET || "default_secret",
       { expiresIn: "24h" }
     );
@@ -34,7 +43,14 @@ export async function POST(req: NextRequest) {
       status: "success",
       message: "Logged in successfully",
       token,
-      user: { id: user.id, email: user.email, role: user.role, merchantId: user.merchantId },
+      user: { 
+        id: user.id, 
+        email: user.email, 
+        role: user.role,
+        fullName: user.fullName,
+        organizationId: user.organization?.id,
+        applicationStatus: user.organization?.application?.status
+      },
     });
   } catch (error) {
     console.error("Login error:", error);

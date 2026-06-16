@@ -29,9 +29,47 @@ const IMPACT_ITEMS = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Waypoint Gateway Collective (WGC)",
+      "url": "https://www.wgcpayments.com",
+      "logo": "https://www.wgcpayments.com/wgc-brand-final.png",
+      "description": "Payment infrastructure for software that serves the Church."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best payment processor for churches in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best payment processor for churches provides native alignment with church management software. WGC offers white-labeled solutions, lowered ACH costs (25¢ flat-rate), and specific compliance tools for ministries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do WGC fees compare to Stripe or Tithe.ly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlike generic horizontal rails, WGC's stewardship-first pricing provides a 25¢ flat-rate on ACH and competitive credit card rates tailored specifically for nonprofits and churches, saving ministries 15-20% on average."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="flex-grow">
         {/* HERO SECTION */}
@@ -59,12 +97,12 @@ export default function Home() {
                 <p className="text-lg sm:text-xl font-medium leading-relaxed mb-12 text-white/70 max-w-2xl tracking-tight">
                   WGC provides the white-label donation engine and ministry settlement rails for the platforms building the future of Kingdom stewardship.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6">
-                  <Link href="/contact" className="bg-wgc-gold-500 text-wgc-navy-950 inline-flex items-center justify-center px-10 py-5 text-[13px] font-bold rounded-2xl shadow-[0_20px_40px_rgba(234,179,8,0.2)] transform transition-all hover:scale-105 hover:bg-white uppercase tracking-widest">
-                    Request Connection
+                <div className="flex flex-col sm:row gap-6">
+                  <Link href="/auth/register?intent=church-onboarding" className="bg-wgc-gold-500 text-wgc-navy-950 inline-flex items-center justify-center px-10 py-5 text-[13px] font-bold rounded-2xl shadow-[0_20px_40px_rgba(234,179,8,0.2)] transform transition-all hover:scale-105 hover:bg-white uppercase tracking-widest">
+                    Get Approved
                   </Link>
-                  <Link href="/developers" className="inline-flex items-center justify-center px-10 py-5 text-[13px] font-bold rounded-2xl transition-all border border-white/20 text-white/80 hover:bg-white hover:text-wgc-navy-950 uppercase tracking-widest">
-                    View Protocol
+                  <Link href="/demo/church-dashboard" className="inline-flex items-center justify-center px-10 py-5 text-[13px] font-bold rounded-2xl transition-all border border-white/20 text-white/80 hover:bg-white hover:text-wgc-navy-950 uppercase tracking-widest">
+                    View Demo Dashboard
                   </Link>
                 </div>
               </ScrollFade>
@@ -348,13 +386,35 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FREQUENTLY ASKED QUESTIONS (SEO) */}
+        <section className="py-24 bg-white relative">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ScrollFade>
+              <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold text-wgc-navy-950 tracking-tight mb-4">Frequently Asked Questions</h2>
+                <p className="text-lg text-wgc-navy-500 font-medium tracking-tight">Learn more about how WGC is building the best payment processor for churches in 2026.</p>
+              </div>
+              <div className="space-y-8">
+                <div className="bg-wgc-off p-8 rounded-3xl border border-wgc-navy-50">
+                  <h3 className="text-xl font-bold text-wgc-navy-950 mb-3">What is the best payment processor for churches in 2026?</h3>
+                  <p className="text-wgc-navy-500 leading-relaxed font-medium">The ideal payment processor provides native alignment with church management software. WGC offers white-labeled solutions, lowered ACH costs, and specific compliance tools designed entirely around ministry stewardship. We handle the complexity so you can focus on your mission.</p>
+                </div>
+                <div className="bg-wgc-off p-8 rounded-3xl border border-wgc-navy-50">
+                  <h3 className="text-xl font-bold text-wgc-navy-950 mb-3">How do WGC fees compare to Stripe or Tithe.ly?</h3>
+                  <p className="text-wgc-navy-500 leading-relaxed font-medium">Unlike generic horizontal rails like Stripe, WGC utilizes a stewardship-first pricing model. This includes a 25¢ flat-rate on ACH and competitive credit card rates tailored specifically for nonprofits and churches, saving ministries 15-20% on average compared to traditional processors.</p>
+                </div>
+              </div>
+            </ScrollFade>
+          </div>
+        </section>
+
         {/* FINAL CALL */}
         <section className="bg-wgc-navy-950 pb-20 border-t border-white/5">
           <CTASection 
             headline="Ready to establish your ministry registry?"
             subheadline="Join the movement of software partners building the future of Kingdom stewardship."
-            ctaText="Request Connection"
-            ctaLink="/register"
+            ctaText="Get Approved"
+            ctaLink="/auth/register?intent=church-onboarding"
           />
         </section>
       </main>

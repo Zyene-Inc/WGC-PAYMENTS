@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import ChurchDashboardLayout from "@/components/dashboard/ChurchDashboardLayout";
 import { 
   TrendingUp, 
@@ -40,14 +41,28 @@ const INSIGHTS = [
 ];
 
 export default function ChurchDashboardPage() {
+  const router = useRouter();
   const [summary, setSummary] = useState<typeof MOCK_SUMMARY | null>(null);
 
   useEffect(() => {
+    // Access control check
+    const userStr = localStorage.getItem("wgc_user_data");
+    if (userStr) {
+      const user = JSON.parse(userStr);
+      if (user.applicationStatus !== "approved") {
+        router.push("/dashboard/church/onboarding/status");
+        return;
+      }
+    } else {
+      router.push("/auth/login");
+      return;
+    }
+
     const timer = setTimeout(() => {
       setSummary(MOCK_SUMMARY);
     }, 500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [router]);
 
   const formatCurrency = (cents: number) => {
     return new Intl.NumberFormat("en-US", {
