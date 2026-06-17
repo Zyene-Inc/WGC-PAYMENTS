@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["/wgc-brand-final.png"],
   },
   icons: {
-    icon: "/favicon.png?v=2",
+    icon: "/favicon.ico?v=3",
   },
 };
 
