@@ -6,6 +6,19 @@ import PricingCalculator from "@/components/pricing/PricingCalculator";
 import CTASection from "@/components/ui/CTASection";
 import ScrollFade from "@/components/ui/ScrollFade";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pricing | Transparent Church & Nonprofit Payment Rates",
+  description: "Clear, competitive payment pricing built for ministries, including low flat-rate ACH. No hidden fees — see how WGC saves partners 15–20%.",
+  openGraph: {
+    title: "Pricing | Transparent Church & Nonprofit Payment Rates",
+    description: "Clear, competitive payment pricing built for ministries, including low flat-rate ACH. No hidden fees — see how WGC saves partners 15–20%.",
+    url: "https://www.wgcpayments.com/pricing",
+  },
+};
+
+
 const INCLUDED_ITEMS = [
   "Donation processing",
   "Recurring giving pipelines",

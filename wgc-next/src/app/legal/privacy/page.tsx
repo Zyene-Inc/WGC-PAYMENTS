@@ -2,6 +2,19 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollFade from "@/components/ui/ScrollFade";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | WGC",
+  description: "How WGC collects, uses, and protects data across its payment platform and partner services.",
+  openGraph: {
+    title: "Privacy Policy | WGC",
+    description: "How WGC collects, uses, and protects data across its payment platform and partner services.",
+    url: "https://www.wgcpayments.com/legal/privacy",
+  },
+};
+
+
 export default function PrivacyPage() {
   return (
     <>

@@ -3,6 +3,19 @@ import Footer from "@/components/layout/Footer";
 import ScrollFade from "@/components/ui/ScrollFade";
 import { Mail } from "lucide-react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact WGC | Talk to Our Payments Team",
+  description: "Get in touch with WGC to discuss embedded payments, partnerships, or onboarding for your church or nonprofit software platform.",
+  openGraph: {
+    title: "Contact WGC | Talk to Our Payments Team",
+    description: "Get in touch with WGC to discuss embedded payments, partnerships, or onboarding for your church or nonprofit software platform.",
+    url: "https://www.wgcpayments.com/contact",
+  },
+};
+
+
 export default function ContactPage() {
   return (
     <>

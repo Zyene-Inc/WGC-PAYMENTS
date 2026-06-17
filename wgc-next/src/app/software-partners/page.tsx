@@ -5,6 +5,19 @@ import Footer from "@/components/layout/Footer";
 import CTASection from "@/components/ui/CTASection";
 import ScrollFade from "@/components/ui/ScrollFade";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Embedded Payments for Ministry SaaS | WGC for Partners",
+  description: "Power your platform with WGC's white-label payment rails. Built for software companies serving churches and nonprofits, with developer-ready APIs.",
+  openGraph: {
+    title: "Embedded Payments for Ministry SaaS | WGC for Partners",
+    description: "Power your platform with WGC's white-label payment rails. Built for software companies serving churches and nonprofits, with developer-ready APIs.",
+    url: "https://www.wgcpayments.com/software-partners",
+  },
+};
+
+
 const FEATURES = [
   {
     title: "White-Labeled Infrastructure",

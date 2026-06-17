@@ -5,6 +5,19 @@ import CTASection from "@/components/ui/CTASection";
 import ScrollFade from "@/components/ui/ScrollFade";
 import { Layers, Shield, Landmark } from "lucide-react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "How WGC Works | White-Label Payment Infrastructure",
+  description: "See how WGC handles gateway orchestration, settlement, and compliance behind your brand — from donor checkout to payout, fully managed.",
+  openGraph: {
+    title: "How WGC Works | White-Label Payment Infrastructure",
+    description: "See how WGC handles gateway orchestration, settlement, and compliance behind your brand — from donor checkout to payout, fully managed.",
+    url: "https://www.wgcpayments.com/how-it-works",
+  },
+};
+
+
 const PAYMENT_STEPS = [
   { label: 'Donor initiates a gift', description: 'A donor taps "Give" inside your app. Your software calls the WGC API with the amount, fund, and donor payment method.' },
   { label: 'WGC authenticates the partner request', description: 'The request is validated against your Partner API key. Merchant routing and fee calculations happen in milliseconds.' },

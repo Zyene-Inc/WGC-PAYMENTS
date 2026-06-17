@@ -2,6 +2,19 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollFade from "@/components/ui/ScrollFade";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | WGC",
+  description: "Read the terms of service governing use of WGC's payment infrastructure and partner services.",
+  openGraph: {
+    title: "Terms of Service | WGC",
+    description: "Read the terms of service governing use of WGC's payment infrastructure and partner services.",
+    url: "https://www.wgcpayments.com/legal/terms",
+  },
+};
+
+
 export default function TermsPage() {
   return (
     <>

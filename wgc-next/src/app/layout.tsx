@@ -18,8 +18,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.wgcpayments.com"),
-  title: "WGC — Payments Built for Church Software",
-  description: "Waypoint Gateway Collective is the embedded payment processing rail for church and nonprofit software. Lower fees, instant payouts, white-label ready.",
+  title: "WGC | Payment Infrastructure for Church & Nonprofit Software",
+  description: "White-label donation engine and settlement rails for software that serves churches and nonprofits. Lower fees, low-cost ACH, and PCI Level 1 security.",
   alternates: {
     canonical: "/",
   },
@@ -28,15 +28,16 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "WGC — Payments Built for Church Software",
-    description: "Waypoint Gateway Collective is the embedded payment processing rail for church and nonprofit software. Lower fees, instant payouts, white-label ready.",
+    title: "WGC | Payment Infrastructure for Church & Nonprofit Software",
+    description: "White-label donation engine and settlement rails for software that serves churches and nonprofits. Lower fees, low-cost ACH, and PCI Level 1 security.",
     type: "website",
     images: ["/wgc-brand-final.png"],
+    url: "https://www.wgcpayments.com/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WGC — Payments Built for Church Software",
-    description: "Waypoint Gateway Collective is the embedded payment processing rail for church and nonprofit software. Lower fees, instant payouts, white-label ready.",
+    title: "WGC | Payment Infrastructure for Church & Nonprofit Software",
+    description: "White-label donation engine and settlement rails for software that serves churches and nonprofits. Lower fees, low-cost ACH, and PCI Level 1 security.",
     images: ["/wgc-brand-final.png"],
   },
   icons: {

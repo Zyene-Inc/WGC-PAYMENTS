@@ -5,6 +5,19 @@ import Footer from "@/components/layout/Footer";
 import ResourceCTA from "@/components/resources/ResourceCTA";
 import ScrollFade from "@/components/ui/ScrollFade";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Stripe vs Tithe.ly vs WGC: Fee Breakdown | WGC",
+  description: "Compare payment processing fees across Stripe, Tithe.ly, and WGC for churches and nonprofits, with a clear breakdown of costs and ACH rates.",
+  openGraph: {
+    title: "Stripe vs Tithe.ly vs WGC: Fee Breakdown | WGC",
+    description: "Compare payment processing fees across Stripe, Tithe.ly, and WGC for churches and nonprofits, with a clear breakdown of costs and ACH rates.",
+    url: "https://www.wgcpayments.com/resources/church-payment-processing-pricing-guide",
+  },
+};
+
+
 const PRICING_ITEMS = [
   'Dashboard Access',
   'Payout Visibility',

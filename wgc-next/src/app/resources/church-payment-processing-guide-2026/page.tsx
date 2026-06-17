@@ -5,6 +5,19 @@ import Footer from "@/components/layout/Footer";
 import ResourceCTA from "@/components/resources/ResourceCTA";
 import ScrollFade from "@/components/ui/ScrollFade";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Payment Processor for Churches in 2026 | WGC",
+  description: "A practical guide to choosing a church payment processor in 2026 — fees, ACH, white-label options, and what to look for when comparing providers.",
+  openGraph: {
+    title: "Best Payment Processor for Churches in 2026 | WGC",
+    description: "A practical guide to choosing a church payment processor in 2026 — fees, ACH, white-label options, and what to look for when comparing providers.",
+    url: "https://www.wgcpayments.com/resources/church-payment-processing-guide-2026",
+  },
+};
+
+
 const PILLARS = [
   'Card payment support',
   'ACH / bank transfer support',

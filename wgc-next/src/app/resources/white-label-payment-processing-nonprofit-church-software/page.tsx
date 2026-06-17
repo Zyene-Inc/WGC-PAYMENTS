@@ -5,6 +5,19 @@ import Footer from "@/components/layout/Footer";
 import ResourceCTA from "@/components/resources/ResourceCTA";
 import ScrollFade from "@/components/ui/ScrollFade";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "How to White-Label Payments for Nonprofit Software | WGC",
+  description: "A step-by-step look at white-labeling payments inside nonprofit and church software, from gateway setup to settlement and compliance.",
+  openGraph: {
+    title: "How to White-Label Payments for Nonprofit Software | WGC",
+    description: "A step-by-step look at white-labeling payments inside nonprofit and church software, from gateway setup to settlement and compliance.",
+    url: "https://www.wgcpayments.com/resources/white-label-payment-processing-nonprofit-church-software",
+  },
+};
+
+
 const MEANINGS = ['Onboarding', 'Checkout', 'Recurring Billing', 'Payouts', 'Reporting'];
 const BENEFITS = ['Better brand continuity', 'Smoother user experience', 'Stronger retention', 'Greater ownership of the journey'];
 
