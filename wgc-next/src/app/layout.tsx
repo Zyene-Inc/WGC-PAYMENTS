@@ -40,9 +40,6 @@ export const metadata: Metadata = {
     description: "White-label donation engine and settlement rails for software that serves churches and nonprofits. Lower fees, low-cost ACH, and PCI Level 1 security.",
     images: ["/wgc-brand-final.png"],
   },
-  icons: {
-    icon: "/favicon.png",
-  },
 };
 
 export default function RootLayout({
