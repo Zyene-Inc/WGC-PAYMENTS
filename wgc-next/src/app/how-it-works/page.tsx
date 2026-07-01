@@ -9,10 +9,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "How WGC Works | White-Label Payment Infrastructure",
-  description: "See how WGC handles gateway orchestration, settlement, and compliance behind your brand — from donor checkout to payout, fully managed.",
+  description: "See how WGC handles gateway orchestration, settlement, and compliance behind your brand — from donor donation page to payout, fully managed.",
   openGraph: {
     title: "How WGC Works | White-Label Payment Infrastructure",
-    description: "See how WGC handles gateway orchestration, settlement, and compliance behind your brand — from donor checkout to payout, fully managed.",
+    description: "See how WGC handles gateway orchestration, settlement, and compliance behind your brand — from donor donation page to payout, fully managed.",
     url: "https://www.wgcpayments.com/how-it-works",
   },
 };

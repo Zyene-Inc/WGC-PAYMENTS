@@ -23,7 +23,7 @@ const PRICING_ITEMS = [
   'Payout Visibility',
   'Recurring Payouts',
   'Historical Ledger',
-  'Branded Checkout',
+  'Branded Donation Page',
   'PCI Compliance'
 ];
 
@@ -32,7 +32,7 @@ const INCLUSION_LIST = [
   { text: 'Transaction Tracking', icon: Zap },
   { text: 'Recurring Management', icon: RefreshCw },
   { text: 'Payout Visibility', icon: Landmark },
-  { text: 'Branded Checkout', icon: Globe },
+  { text: 'Branded Donation Page', icon: Globe },
   { text: 'Branded Onboarding', icon: Users },
   { text: 'Embedded Forms', icon: Settings },
   { text: 'Reporting Tools', icon: FileText },

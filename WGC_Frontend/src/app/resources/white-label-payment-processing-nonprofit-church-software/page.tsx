@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import ResourceCTA from "@/components/resources/ResourceCTA";
 import ScrollFade from "@/components/ui/ScrollFade";
 
-const MEANINGS = ['Onboarding', 'Checkout', 'Recurring Billing', 'Payouts', 'Reporting'];
+const MEANINGS = ['Onboarding', 'Donation Page', 'Recurring Billing', 'Payouts', 'Reporting'];
 const BENEFITS = ['Better brand continuity', 'Smoother user experience', 'Stronger retention', 'Greater ownership of the journey'];
 
 const FEATURE_BLOCKS = [
@@ -16,8 +16,8 @@ const FEATURE_BLOCKS = [
   },
   {
     icon: Box,
-    title: 'Embedded Checkout',
-    text: 'Keep the donation flow consistent with your platform UI. Our API supports highly customizable, secure checkout experiences.'
+    title: 'Embedded Donation Page',
+    text: 'Keep the donation flow consistent with your platform UI. Our API supports highly customizable, secure donation page experiences.'
   },
   {
     icon: CreditCard,

@@ -23,7 +23,7 @@ const PILLARS = [
   'ACH / bank transfer support',
   'Recurring donation options',
   'Donation form experience',
-  'Branded checkout',
+  'Branded donation page',
   'Payout visibility',
   'Reporting & transaction history',
   'Ease of setup'
@@ -131,7 +131,7 @@ export default function ChurchPaymentGuidePage() {
                 <section>
                   <div className="flex items-center gap-4 mb-8">
                     <div className="w-1.5 h-8 bg-wgc-gold-500 rounded-full"></div>
-                    <h2 className="text-2xl font-bold tracking-tight m-0">Why branded checkout matters</h2>
+                    <h2 className="text-2xl font-bold tracking-tight m-0">Why a branded donation page matters</h2>
                   </div>
                   <p className="opacity-80 font-medium leading-relaxed">A consistent branded giving experience builds trust. When a donor never leaves your ecosystem to complete a transaction, donor abandonment rates drop significantly. Embedded payment forms reduce technical friction and keep the payment journey focused on the organization&apos;s mission.</p>
                 </section>

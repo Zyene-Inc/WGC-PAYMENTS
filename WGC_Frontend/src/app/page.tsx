@@ -54,7 +54,7 @@ export default function Home() {
                   <span className="text-[10px] font-black uppercase tracking-[0.4em] text-wgc-gold-500/90 font-mono">Ministry Rails</span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-8 !text-white">
-                  Payment infrastructure for software that serves <span className="text-wgc-gold-500 italic">the Church</span> & <span className="text-wgc-navy-300">Nonprofits.</span>
+                  The white label payments option built for <span className="text-wgc-gold-500 italic">churches, non-profits,</span> & <span className="text-wgc-navy-300">their software.</span>
                 </h1>
                 <p className="text-lg sm:text-xl font-medium leading-relaxed mb-12 text-white/70 max-w-2xl tracking-tight">
                   WGC provides the white-label donation engine and ministry settlement rails for the platforms building the future of Kingdom stewardship.
@@ -199,8 +199,8 @@ export default function Home() {
               <ScrollFade className="lg:col-span-1">
                 <div className="relative rounded-[3rem] overflow-hidden shadow-2xl h-full min-h-[450px] group border border-wgc-navy-100">
                     <img 
-                      src="/images/nonprofit_dark.png" 
-                      alt="Nonprofit Mission Impact"
+                      src="/images/partners.png" 
+                      alt="Partner Impact"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-[0.85]"
                     />
 
