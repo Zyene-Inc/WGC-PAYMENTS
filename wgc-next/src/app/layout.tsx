@@ -45,6 +45,18 @@ export const metadata: Metadata = {
   },
 };
 
+const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Way Point Gateway Collective",
+  "url": "https://www.wgcpayments.com",
+  "logo": "https://www.wgcpayments.com/wgc-brand-final.png",
+  "areaServed": {
+    "@type": "City",
+    "name": "Kansas City"
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,6 +65,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
+        />
         <AuthProvider>
           {children}
         </AuthProvider>

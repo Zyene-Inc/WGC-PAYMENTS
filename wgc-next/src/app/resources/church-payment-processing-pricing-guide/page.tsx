@@ -147,6 +147,54 @@ export default function PricingGuidePage() {
                 </section>
               </ScrollFade>
 
+              {/* Comparison Table */}
+              <ScrollFade>
+                <section>
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-1.5 h-8 bg-wgc-gold-500 rounded-full"></div>
+                    <h2 className="text-2xl font-bold tracking-tight m-0">Stripe vs Tithe.ly vs WGC</h2>
+                  </div>
+                  <div className="overflow-x-auto border border-wgc-navy-100 rounded-2xl shadow-sm mb-12">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr className="bg-wgc-navy-50 border-b border-wgc-navy-100">
+                          <th className="p-4 font-bold text-wgc-navy-950">Feature / Provider</th>
+                          <th className="p-4 font-bold text-wgc-navy-950">WGC</th>
+                          <th className="p-4 font-bold text-wgc-navy-950">Stripe</th>
+                          <th className="p-4 font-bold text-wgc-navy-950">Tithe.ly</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-wgc-navy-50">
+                          <td className="p-4 font-medium text-wgc-navy-950">Card Fees</td>
+                          <td className="p-4 font-bold text-wgc-gold-600">2.30% + $0.25</td>
+                          <td className="p-4 text-wgc-navy-600">2.2% + $0.30</td>
+                          <td className="p-4 text-wgc-navy-600">2.9% + $0.30</td>
+                        </tr>
+                        <tr className="border-b border-wgc-navy-50">
+                          <td className="p-4 font-medium text-wgc-navy-950">ACH / Bank Transfer</td>
+                          <td className="p-4 font-bold text-wgc-gold-600">$0.25 flat-rate</td>
+                          <td className="p-4 text-wgc-navy-600">0.8% (capped at $5)</td>
+                          <td className="p-4 text-wgc-navy-600">1.0% + $0.30</td>
+                        </tr>
+                        <tr className="border-b border-wgc-navy-50">
+                          <td className="p-4 font-medium text-wgc-navy-950">Monthly Platform Fee</td>
+                          <td className="p-4 text-wgc-navy-600">$10 / org</td>
+                          <td className="p-4 text-wgc-navy-600">$0</td>
+                          <td className="p-4 text-wgc-navy-600">$0 (or $19/mo for extra features)</td>
+                        </tr>
+                        <tr>
+                          <td className="p-4 font-medium text-wgc-navy-950">White-Label Capable</td>
+                          <td className="p-4 text-wgc-navy-600">Yes (Native)</td>
+                          <td className="p-4 text-wgc-navy-600">Yes (Connect)</td>
+                          <td className="p-4 text-wgc-navy-600">No</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              </ScrollFade>
+
               {/* Feature Checklist */}
               <ScrollFade>
                 <section className="bg-wgc-off rounded-[3rem] p-12 border border-wgc-navy-100">

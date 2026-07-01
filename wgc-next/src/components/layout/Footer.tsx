@@ -47,6 +47,15 @@ export default function Footer() {
                 <FooterLink href="/resources/church-payment-processing-pricing-guide">
                   Fee Breakdown
                 </FooterLink>
+                <FooterLink href="/kansas-city/church-payment-processing">
+                  Kansas City Churches
+                </FooterLink>
+                <FooterLink href="/kansas-city/nonprofit-payment-processing">
+                  Kansas City Nonprofits
+                </FooterLink>
+                <FooterLink href="/kansas-city/tithely-alternative">
+                  Tithe.ly Alternative KC
+                </FooterLink>
               </ul>
             </div>
             <div>

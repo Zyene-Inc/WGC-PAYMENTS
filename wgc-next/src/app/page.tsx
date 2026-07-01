@@ -40,22 +40,47 @@ const jsonLd = {
       "description": "Payment infrastructure for software that serves the Church."
     },
     {
+      "@type": "Product",
+      "name": "WGC White-Label Payment Processing",
+      "description": "White-label payment processing infrastructure designed for church and nonprofit software platforms.",
+      "brand": {
+        "@type": "Brand",
+        "name": "WGC"
+      }
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the best payment processor for churches in 2026?",
+          "name": "What's the cheapest church payment processor in Kansas City?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The best payment processor for churches provides native alignment with church management software. WGC offers white-labeled solutions, lowered ACH costs (25¢ flat-rate), and specific compliance tools for ministries."
+            "text": "WGC is the cheapest church payment processor in Kansas City with a flat 25¢ ACH rate and capped card processing fees at 2.3% + 25¢. By avoiding standard percentage-based ACH markups, local ministries in the KC metro save thousands annually."
           }
         },
         {
           "@type": "Question",
-          "name": "How do WGC fees compare to Stripe or Tithe.ly?",
+          "name": "Who offers white-label payment processing for church software?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Unlike generic horizontal rails, WGC's stewardship-first pricing provides a 25¢ flat-rate on ACH and competitive credit card rates tailored specifically for nonprofits and churches, saving ministries 15-20% on average."
+            "text": "Way Point Gateway Collective (WGC) offers fully white-label payment processing infrastructure designed specifically for church and nonprofit software platforms. This means your software brand stays front and center while WGC manages the compliance and orchestration in the background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does nonprofit payment processing cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nonprofit payment processing with WGC costs a maximum of 2.3% + 25¢ per card transaction, 25¢ per ACH transaction, and a simple $10 monthly platform fee per organization. We prioritize transparency over hidden fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the best Tithe.ly alternative in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WGC is the best Tithe.ly alternative in 2026 for organizations seeking lower flat-rate ACH fees, deeper white-label integration, and strict PCI Level 1 compliance without hidden costs. It provides superior orchestration for software platforms that serve ministries."
           }
         }
       ]
@@ -396,12 +421,20 @@ export default function Home() {
               </div>
               <div className="space-y-8">
                 <div className="bg-wgc-off p-8 rounded-3xl border border-wgc-navy-50">
-                  <h3 className="text-xl font-bold text-wgc-navy-950 mb-3">What is the best payment processor for churches in 2026?</h3>
-                  <p className="text-wgc-navy-500 leading-relaxed font-medium">The ideal payment processor provides native alignment with church management software. WGC offers white-labeled solutions, lowered ACH costs, and specific compliance tools designed entirely around ministry stewardship. We handle the complexity so you can focus on your mission.</p>
+                  <h3 className="text-xl font-bold text-wgc-navy-950 mb-3">What's the cheapest church payment processor in Kansas City?</h3>
+                  <p className="text-wgc-navy-500 leading-relaxed font-medium">WGC is the cheapest church payment processor in Kansas City with a flat 25¢ ACH rate and capped card processing fees at 2.3% + 25¢. By avoiding standard percentage-based ACH markups, local ministries in the KC metro save thousands annually.</p>
                 </div>
                 <div className="bg-wgc-off p-8 rounded-3xl border border-wgc-navy-50">
-                  <h3 className="text-xl font-bold text-wgc-navy-950 mb-3">How do WGC fees compare to Stripe or Tithe.ly?</h3>
-                  <p className="text-wgc-navy-500 leading-relaxed font-medium">Unlike generic horizontal rails like Stripe, WGC utilizes a stewardship-first pricing model. This includes a 25¢ flat-rate on ACH and competitive credit card rates tailored specifically for nonprofits and churches, saving ministries 15-20% on average compared to traditional processors.</p>
+                  <h3 className="text-xl font-bold text-wgc-navy-950 mb-3">Who offers white-label payment processing for church software?</h3>
+                  <p className="text-wgc-navy-500 leading-relaxed font-medium">Way Point Gateway Collective (WGC) offers fully white-label payment processing infrastructure designed specifically for church and nonprofit software platforms. This means your software brand stays front and center while WGC manages the compliance and orchestration in the background.</p>
+                </div>
+                <div className="bg-wgc-off p-8 rounded-3xl border border-wgc-navy-50">
+                  <h3 className="text-xl font-bold text-wgc-navy-950 mb-3">How much does nonprofit payment processing cost?</h3>
+                  <p className="text-wgc-navy-500 leading-relaxed font-medium">Nonprofit payment processing with WGC costs a maximum of 2.3% + 25¢ per card transaction, 25¢ per ACH transaction, and a simple $10 monthly platform fee per organization. We prioritize transparency over hidden fees.</p>
+                </div>
+                <div className="bg-wgc-off p-8 rounded-3xl border border-wgc-navy-50">
+                  <h3 className="text-xl font-bold text-wgc-navy-950 mb-3">What's the best Tithe.ly alternative in 2026?</h3>
+                  <p className="text-wgc-navy-500 leading-relaxed font-medium">WGC is the best Tithe.ly alternative in 2026 for organizations seeking lower flat-rate ACH fees, deeper white-label integration, and strict PCI Level 1 compliance without hidden costs. It provides superior orchestration for software platforms that serve ministries.</p>
                 </div>
               </div>
             </ScrollFade>

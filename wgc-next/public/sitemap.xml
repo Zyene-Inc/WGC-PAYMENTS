@@ -24,4 +24,19 @@
     <loc>https://www.wgcpayments.com/contact</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.wgcpayments.com/kansas-city/church-payment-processing</loc>
+    <lastmod>2026-07-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wgcpayments.com/kansas-city/nonprofit-payment-processing</loc>
+    <lastmod>2026-07-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wgcpayments.com/kansas-city/tithely-alternative</loc>
+    <lastmod>2026-07-01</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
