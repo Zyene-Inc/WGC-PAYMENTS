@@ -131,8 +131,10 @@ export default function KansasCityNonprofitPayments() {
         </section>
 
         <CTASection 
-          title="Ready to maximize your nonprofit's impact?"
-          description="Join other Kansas City organizations leveraging WGC's transparent payment infrastructure."
+          headline="Ready to maximize your nonprofit's impact?"
+          subheadline="Join other Kansas City organizations leveraging WGC's transparent payment infrastructure."
+          ctaText="Get Approved"
+          ctaLink="/auth/register?intent=church-onboarding"
         />
       </main>
       <Footer />

@@ -130,7 +130,12 @@ export default function KansasCityChurchPayments() {
           </div>
         </section>
 
-        <CTASection />
+        <CTASection 
+          headline="Ready to upgrade your KC ministry?"
+          subheadline="Join the Kansas City churches and nonprofits maximizing their stewardship with WGC."
+          ctaText="Get Approved"
+          ctaLink="/auth/register?intent=church-onboarding"
+        />
       </main>
       <Footer />
     </>
